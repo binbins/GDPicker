@@ -1,0 +1,16 @@
+PODS:
+  - GDPicker (0.1.0)
+
+DEPENDENCIES:
+  - GDPicker (from `../`)
+
+EXTERNAL SOURCES:
+  GDPicker:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  GDPicker: 17d10329470591b1ffa270d13739aedc2cdfcaf3
+
+PODFILE CHECKSUM: 96948c72018394f76e2737411afefe1c85eb1e46
+
+COCOAPODS: 1.2.0

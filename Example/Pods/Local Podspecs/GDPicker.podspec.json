@@ -1,0 +1,22 @@
+{
+  "name": "GDPicker",
+  "version": "0.1.0",
+  "summary": "A short description of GDPicker.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/binbins/GDPicker",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "binbins": "gddabinbin@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/binbins/GDPicker.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "GDPicker/Classes/**/*"
+}
