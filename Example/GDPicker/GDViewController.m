@@ -6,8 +6,8 @@
 //  Copyright (c) 2017 binbins. All rights reserved.
 //
 // [UIScreen mainScreen].bounds.size.width
-#define GDSCR_W [UIScreen mainScreen].bounds.size.width
-#define GDSCR_H [UIScreen mainScreen].bounds.size.height
+#define K_W [UIScreen mainScreen].bounds.size.width
+#define K_H [UIScreen mainScreen].bounds.size.height
 
 #import "GDViewController.h"
 #import "ResultCell.h"
@@ -62,8 +62,8 @@
 
 - (CGSize) collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
-    NSInteger width = (GDSCR_W*0.8) - 10*2;
-    NSInteger height = (GDSCR_W*0.8)/0.8;
+    NSInteger width = (K_W*0.8) - 10*2;
+    NSInteger height = (K_W*0.8)/0.8;
     return  CGSizeMake(width, height);
 }
 

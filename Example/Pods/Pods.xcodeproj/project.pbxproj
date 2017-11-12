@@ -7,12 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07FF1CAA1FB88545007D6FFA /* GDPickerCtrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FF1CA71FB88545007D6FFA /* GDPickerCtrl.h */; };
+		07FF1CAB1FB88545007D6FFA /* GDPickerCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FF1CA81FB88545007D6FFA /* GDPickerCtrl.m */; };
+		07FF1CAF1FB8856C007D6FFA /* GDPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FF1CAC1FB8856C007D6FFA /* GDPickerCell.h */; };
+		07FF1CB01FB8856C007D6FFA /* GDPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FF1CAD1FB8856C007D6FFA /* GDPickerCell.m */; };
+		07FF1CB41FB887E3007D6FFA /* TipView.h in Headers */ = {isa = PBXBuildFile; fileRef = 07FF1CB21FB887E2007D6FFA /* TipView.h */; };
+		07FF1CB51FB887E3007D6FFA /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07FF1CB31FB887E2007D6FFA /* TipView.m */; };
 		39BE5C8CEE5C04A68E47A9F77C40DA63 /* GDPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DB08D05014AFD9D84C9E856AEC098B /* GDPicker-dummy.m */; };
 		3B1296EBACF2465622C7139B8EFF3ED6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
 		5AF8A7D25C223F4A456AB7A52629719F /* Pods-GDPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFD524B6E4BAC5FD3C9B14580B4E51 /* Pods-GDPicker_Example-dummy.m */; };
 		74EAD33EEDAC2DCB20E706020A05B38B /* Pods-GDPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C872226825F6683EDEAD30192050873 /* Pods-GDPicker_Tests-dummy.m */; };
 		75F8980D1D27337B5BD7051C2DC671DE /* GDPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C865523A0ACA30313C4469ACC50651BA /* GDPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		91A50DC2EC1A743AECB84444F4D4CEF2 /* ReplaceMe.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D77C30EA151E0B343297414C553184E /* ReplaceMe.m */; };
 		9D6FEDB17CF6A81946B61AC9AD12356D /* Pods-GDPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F662A79F2FD377790150B4CFAE3D9F25 /* Pods-GDPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B0E1C22A2AD9B710FBF898812CCBC804 /* Pods-GDPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6E6133FFE64773CDE5AAA3A082142A /* Pods-GDPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C0DCD1756998154F7E78E2D3AD10F0FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
@@ -30,10 +35,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D77C30EA151E0B343297414C553184E /* ReplaceMe.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = ReplaceMe.m; sourceTree = "<group>"; };
-		0E8B5F34DD533591E47C3292F840B336 /* Pods_GDPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GDPicker_Example.framework; path = "Pods-GDPicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		07FF1CA71FB88545007D6FFA /* GDPickerCtrl.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDPickerCtrl.h; sourceTree = "<group>"; };
+		07FF1CA81FB88545007D6FFA /* GDPickerCtrl.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDPickerCtrl.m; sourceTree = "<group>"; };
+		07FF1CA91FB88545007D6FFA /* GDPickerCtrl.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDPickerCtrl.xib; sourceTree = "<group>"; };
+		07FF1CAC1FB8856C007D6FFA /* GDPickerCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GDPickerCell.h; sourceTree = "<group>"; };
+		07FF1CAD1FB8856C007D6FFA /* GDPickerCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GDPickerCell.m; sourceTree = "<group>"; };
+		07FF1CAE1FB8856C007D6FFA /* GDPickerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GDPickerCell.xib; sourceTree = "<group>"; };
+		07FF1CB21FB887E2007D6FFA /* TipView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipView.h; sourceTree = "<group>"; };
+		07FF1CB31FB887E2007D6FFA /* TipView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipView.m; sourceTree = "<group>"; };
+		07FF1CB61FB887F4007D6FFA /* nofavor.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nofavor.png; sourceTree = "<group>"; };
+		07FF1CB71FB887F4007D6FFA /* noresult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = noresult.png; sourceTree = "<group>"; };
+		07FF1CB81FB887F5007D6FFA /* nonet.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = nonet.png; sourceTree = "<group>"; };
+		0E8B5F34DD533591E47C3292F840B336 /* Pods_GDPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1128815F646DA4BC4584F2F2711D3C3F /* Pods-GDPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		1C5A3D18CD376F809DC567B8E236EEBF /* Pods-GDPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GDPicker_Example.modulemap"; sourceTree = "<group>"; };
+		1C5A3D18CD376F809DC567B8E236EEBF /* Pods-GDPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GDPicker_Example.modulemap"; sourceTree = "<group>"; };
 		2709B5D0D142DD798F145EB7BE904313 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3CF1A81603968D35F28091C0445450E1 /* Pods-GDPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
 		439C6FED4330B6E6D6A7AAA5D032FDB7 /* Pods-GDPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Tests-resources.sh"; sourceTree = "<group>"; };
@@ -41,21 +56,21 @@
 		7B8F5817D7E0DE3C5392885670448C3C /* Pods-GDPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
 		7C872226825F6683EDEAD30192050873 /* Pods-GDPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Tests-dummy.m"; sourceTree = "<group>"; };
 		8D712BA369CB3761F1F45D47E944AB5A /* GDPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GDPicker.xcconfig; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		97B93748467DB58B3F3F021695F5C9E3 /* Pods-GDPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9D6E6133FFE64773CDE5AAA3A082142A /* Pods-GDPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
 		A5DB08D05014AFD9D84C9E856AEC098B /* GDPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GDPicker-dummy.m"; sourceTree = "<group>"; };
-		A69E7ED32F6E75866B5297C1406422A6 /* GDPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GDPicker.framework; path = GDPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A69E7ED32F6E75866B5297C1406422A6 /* GDPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GDPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B18FDA204FD0A5A6CCFE4749352740F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B3A0C70A3F0DD6DF7E9EBC66DBD8D8CD /* Pods-GDPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		B56B4C8D5A1EAC622F519427056CAEF2 /* Pods_GDPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GDPicker_Tests.framework; path = "Pods-GDPicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B56B4C8D5A1EAC622F519427056CAEF2 /* Pods_GDPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B98D0CC75AEDD2CFE8D1B4C4BDB88E5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE785FC27DB550158C0C3B81B0BE267F /* Pods-GDPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GDPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		BE785FC27DB550158C0C3B81B0BE267F /* Pods-GDPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-GDPicker_Tests.modulemap"; sourceTree = "<group>"; };
 		C46F045FE6D937DEBA0564A79C87C887 /* GDPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-prefix.pch"; sourceTree = "<group>"; };
 		C865523A0ACA30313C4469ACC50651BA /* GDPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-umbrella.h"; sourceTree = "<group>"; };
 		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		CBFFD524B6E4BAC5FD3C9B14580B4E51 /* Pods-GDPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Example-dummy.m"; sourceTree = "<group>"; };
-		D5F03A246DB5E6BC88016FF0A13FBE81 /* GDPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GDPicker.modulemap; sourceTree = "<group>"; };
+		D5F03A246DB5E6BC88016FF0A13FBE81 /* GDPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = GDPicker.modulemap; sourceTree = "<group>"; };
 		DB9F1EE3A2FF6FAAF708A058A953C0F9 /* Pods-GDPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 		DF01F72C80729E566E74A438720C87B6 /* Pods-GDPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Example-resources.sh"; sourceTree = "<group>"; };
 		E658EFE58F69720842013F9FB7A6D484 /* Pods-GDPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -104,6 +119,16 @@
 			);
 			name = "Support Files";
 			path = "Example/Pods/Target Support Files/GDPicker";
+			sourceTree = "<group>";
+		};
+		07FF1CB11FB887BC007D6FFA /* gd_imgs */ = {
+			isa = PBXGroup;
+			children = (
+				07FF1CB61FB887F4007D6FFA /* nofavor.png */,
+				07FF1CB81FB887F5007D6FFA /* nonet.png */,
+				07FF1CB71FB887F4007D6FFA /* noresult.png */,
+			);
+			path = gd_imgs;
 			sourceTree = "<group>";
 		};
 		1AABE74D2A73B14FFB513F31CCB778DB /* Pods-GDPicker_Tests */ = {
@@ -155,9 +180,16 @@
 		5852B22F49627B9F895456C8D7FA853D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0D77C30EA151E0B343297414C553184E /* ReplaceMe.m */,
+				07FF1CA71FB88545007D6FFA /* GDPickerCtrl.h */,
+				07FF1CA81FB88545007D6FFA /* GDPickerCtrl.m */,
+				07FF1CA91FB88545007D6FFA /* GDPickerCtrl.xib */,
+				07FF1CAC1FB8856C007D6FFA /* GDPickerCell.h */,
+				07FF1CAD1FB8856C007D6FFA /* GDPickerCell.m */,
+				07FF1CAE1FB8856C007D6FFA /* GDPickerCell.xib */,
+				07FF1CB21FB887E2007D6FFA /* TipView.h */,
+				07FF1CB31FB887E2007D6FFA /* TipView.m */,
+				07FF1CB11FB887BC007D6FFA /* gd_imgs */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -220,7 +252,6 @@
 			children = (
 				5852B22F49627B9F895456C8D7FA853D /* Classes */,
 			);
-			name = GDPicker;
 			path = GDPicker;
 			sourceTree = "<group>";
 		};
@@ -247,7 +278,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FF1CAF1FB8856C007D6FFA /* GDPickerCell.h in Headers */,
+				07FF1CAA1FB88545007D6FFA /* GDPickerCtrl.h in Headers */,
 				75F8980D1D27337B5BD7051C2DC671DE /* GDPicker-umbrella.h in Headers */,
+				07FF1CB41FB887E3007D6FFA /* TipView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,8 +373,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07FF1CB51FB887E3007D6FFA /* TipView.m in Sources */,
 				39BE5C8CEE5C04A68E47A9F77C40DA63 /* GDPicker-dummy.m in Sources */,
-				91A50DC2EC1A743AECB84444F4D4CEF2 /* ReplaceMe.m in Sources */,
+				07FF1CB01FB8856C007D6FFA /* GDPickerCell.m in Sources */,
+				07FF1CAB1FB88545007D6FFA /* GDPickerCtrl.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
