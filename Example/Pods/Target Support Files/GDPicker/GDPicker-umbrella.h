@@ -10,6 +10,9 @@
 #endif
 #endif
 
+#import "GDPickerCell.h"
+#import "GDPickerCtrl.h"
+#import "TipView.h"
 
 FOUNDATION_EXPORT double GDPickerVersionNumber;
 FOUNDATION_EXPORT const unsigned char GDPickerVersionString[];

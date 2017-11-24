@@ -11,6 +11,7 @@
 
 #import "GDViewController.h"
 #import "ResultCell.h"
+@import GDPicker;
 
 @interface GDViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *resultCollection;
@@ -41,6 +42,12 @@
 #pragma mark - out let
 
 - (IBAction)singImgTouched:(id)sender {
+    
+    NSString *nibName = NSStringFromClass([GDPickerCtrl class]);
+    NSBundle *pickerBundle = [NSBundle bundleForClass:[GDPickerCtrl class]];
+    GDPickerCtrl *picker = [[GDPickerCtrl alloc] initWithNibName:nibName bundle:pickerBundle];
+    picker.pickerType = PickerTypeSinglePhoto;
+    [self presentViewController:picker animated:YES completion:nil];
 }
 
 - (IBAction)multipleImgTouched:(id)sender {

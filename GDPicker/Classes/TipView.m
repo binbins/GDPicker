@@ -5,6 +5,7 @@
 //  Created by 张帆 on 2017/5/25.
 //  Copyright © 2017年 adesk. All rights reserved.
 //
+#define GDSCR_W [[UIScreen mainScreen] bounds].size.width
 
 #import "TipView.h"
 

@@ -5,6 +5,8 @@
 //  Created by 张帆 on 2017/11/12.
 //
 #define MAX_SELECTED_IMG_NUM 10
+#define GDSCR_W [[UIScreen mainScreen] bounds].size.width
+#define GDSCR_H [[UIScreen mainScreen] bounds].size.height
 
 #import "GDPickerCtrl.h"
 #import "GDPickerCell.h"
@@ -12,9 +14,11 @@
 @import Photos;
 
 @interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, TipViewDelegate>
-@property (weak, nonatomic) IBOutlet UICollectionView *pickerCollection;
-@property (weak, nonatomic) IBOutlet UIButton *nextBtn;
-@property (weak, nonatomic) IBOutlet UILabel *pickName;
+
+@property (unsafe_unretained, nonatomic) IBOutlet UICollectionView *pickerCollection;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *nextBtn;
+@property (unsafe_unretained, nonatomic) IBOutlet UIButton *cancelBtn;
+@property (unsafe_unretained, nonatomic) IBOutlet UILabel *pickName;
 @property (nonatomic, strong) TipView *tipsView;
 @property (nonatomic, strong) NSMutableArray *pickerModels, *selectedIndexs;
 
@@ -102,6 +106,10 @@
 - (void)initPickerCollection {
     _pickerCollection.delegate = self;
     _pickerCollection.dataSource = self;
+    
+    NSString *cellName = NSStringFromClass([GDPickerCell class]);
+    UINib *nib = [UINib nibWithNibName:cellName bundle:[NSBundle bundleForClass:[GDPickerCell class]]];
+    [_pickerCollection registerNib:nib forCellWithReuseIdentifier:cellName];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -192,7 +200,7 @@
 }
 
 - (IBAction)backBtnClicked:(id)sender {
-    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - collectiondelegate

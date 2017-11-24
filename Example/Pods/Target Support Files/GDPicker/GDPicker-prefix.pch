@@ -10,5 +10,3 @@
 #endif
 #endif
 
-#define GDSCR_W [UIScreen mainScreen].bounds.size.width
-#define GDSCR_H [UIScreen mainScreen].bounds.size.height

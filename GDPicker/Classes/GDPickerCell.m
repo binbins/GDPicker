@@ -27,6 +27,7 @@
     
     [self initCoverImg:asset];
     
+    return;
     if (pickType == PickeTypeLivephoto) {
         _liveMark.hidden = NO;
         
@@ -60,7 +61,7 @@
     options.synchronous = YES;
     options.networkAccessAllowed = YES;
     
-    CGSize size;
+    CGSize size = CGSizeMake(100, 100);
 //    CGSize size = [SystemUtils sizeMaxWidth:100.f withAsset:asset];
     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         
