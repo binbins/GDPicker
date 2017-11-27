@@ -6,6 +6,7 @@
 //
 
 #import "GDPickerCell.h"
+#import "GDUtils.h"
 
 @interface GDPickerCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *liveMark;
@@ -27,7 +28,6 @@
     
     [self initCoverImg:asset];
     
-    return;
     if (pickType == PickeTypeLivephoto) {
         _liveMark.hidden = NO;
         
@@ -61,8 +61,7 @@
     options.synchronous = YES;
     options.networkAccessAllowed = YES;
     
-    CGSize size = CGSizeMake(100, 100);
-//    CGSize size = [SystemUtils sizeMaxWidth:100.f withAsset:asset];
+    CGSize size = [GDUtils sizeMaxWidth:150.f withAsset:asset];
     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
@@ -80,7 +79,6 @@
         });
     }];
 }
-
 
 - (void)initBurstCountLabel:(PHAsset *)asset {
     

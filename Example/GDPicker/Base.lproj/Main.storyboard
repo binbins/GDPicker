@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -42,7 +42,6 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IY7-in-3tg">
                                                     <rect key="frame" x="0.0" y="0.0" width="281" height="342"/>
-                                                    <color key="backgroundColor" red="0.95514839890000003" green="0.27831503749999997" blue="0.31322383879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
                                             </subviews>
                                         </view>
@@ -52,6 +51,9 @@
                                             <constraint firstItem="IY7-in-3tg" firstAttribute="leading" secondItem="U5d-Wa-Uea" secondAttribute="leading" id="Yin-oA-fsP"/>
                                             <constraint firstAttribute="trailing" secondItem="IY7-in-3tg" secondAttribute="trailing" id="jQm-DR-JQw"/>
                                         </constraints>
+                                        <connections>
+                                            <outlet property="cover" destination="IY7-in-3tg" id="fou-3K-1gU"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -90,7 +92,7 @@
                                         <rect key="frame" x="0.0" y="219" width="375" height="43.5"/>
                                         <state key="normal" title="选择gif"/>
                                         <connections>
-                                            <action selector="gitTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="7BC-S5-dXk"/>
+                                            <action selector="gifTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="pQk-PG-Ubu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY6-mX-SJP">

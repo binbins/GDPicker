@@ -11,7 +11,9 @@
 #import "GDPickerCtrl.h"
 #import "GDPickerCell.h"
 #import "TipView.h"
-@import Photos;
+#import "GDUtils.h"
+
+typedef void (^DoneBlock)(NSArray *arr);
 
 @interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, TipViewDelegate>
 
@@ -20,6 +22,7 @@
 @property (unsafe_unretained, nonatomic) IBOutlet UIButton *cancelBtn;
 @property (unsafe_unretained, nonatomic) IBOutlet UILabel *pickName;
 @property (nonatomic, strong) TipView *tipsView;
+@property (nonatomic, strong) DoneBlock doneBlock;
 @property (nonatomic, strong) NSMutableArray *pickerModels, *selectedIndexs;
 
 @property (nonatomic, assign) BOOL isVideoPicker, isLivePhotoPicker, isBurstPicker, isPhotosPicker;
@@ -47,6 +50,32 @@
         _selectedIndexs = [NSMutableArray array];
     }
     return _selectedIndexs;
+}
+
+#pragma mark - 公开
+- (instancetype)initWithPickerType:(PickerType)typeType CompleteBlock:(void(^)(NSArray<PHAsset *> *resultArr))completeBlock {
+    
+    NSString *nibName = NSStringFromClass([GDPickerCtrl class]);
+    NSBundle *pickerBundle = [NSBundle bundleForClass:[GDPickerCtrl class]];
+    if (self = [super initWithNibName:nibName bundle:pickerBundle]) {
+        self.pickerType = typeType;
+    }
+    if (completeBlock) {
+        self.doneBlock = ^(NSArray *arr) {
+            completeBlock(arr);
+        };
+    }
+    
+    return self;
+}
+
+- (void)showIn:(UIViewController *)ctrl {
+    
+    [ctrl presentViewController:self animated:YES completion:nil];
+}
+
+- (void)dismiss {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - view
@@ -182,21 +211,14 @@
 #pragma mark - out let
 
 - (IBAction)nextBtnClicked:(id)sender {
-//    [HudManager showLoading];
-    __weak typeof(self) weakSelf = self;
-    
+
     NSMutableArray *selectedAssets = [NSMutableArray array];
     for (NSIndexPath *index in self.selectedIndexs) {
         PHAsset *asset = self.pickerModels[index.row];
         [selectedAssets addObject:asset];
     }
-    
-//    [SystemUtils imgsWithPhassetArr:selectedAssets completion:^(NSMutableArray *images) {
-//        [HudManager hideLoading];
-//        if (images.count>0) {
-//            [weakSelf pushEditCtrlWith:images type:GifFromImgs];
-//        }
-//    }];
+    self.doneBlock(selectedAssets);
+    [self dismiss];
 }
 
 - (IBAction)backBtnClicked:(id)sender {
@@ -204,6 +226,19 @@
 }
 
 #pragma mark - collectiondelegate
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
+    
+    return UIEdgeInsetsMake(5, 0, 0, 0);
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section {
+    return 5;
+}
+
+- (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout minimumInteritemSpacingForSectionAtIndex:(NSInteger)section {
+    return 5;
+}
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout *)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -220,7 +255,7 @@
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.row >= self.pickerModels.count) {
-        NSLog(@"数组越界");
+        NSLog(@"...数组越界");
         return nil;
     }
     
@@ -233,23 +268,14 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
     PHAsset *asset = self.pickerModels[indexPath.row];
     
-    if (_pickerType == PickeTypeLivephoto) {
-        [self livephotoTouched:asset];
-        
-    }else if (_pickerType == PickerTypeVideo){
-        [self videoTouched:asset];
-        
-    }else if (_pickerType == PickerTypeBurst) {
-        [self burstTouched:asset];
-        
-    }else if (_pickerType == PickerTypeManyPhoto) {
-        
+    if (_pickerType == PickerTypeManyPhoto) {
         [self manyPhotosTouched:indexPath];
-    }else if (_pickerType == PickerTypeSinglePhoto) {
-        NSLog(@"只选择一张图片");
+    }else {
+        NSArray *result = [NSArray arrayWithObjects:asset, nil];
+        self.doneBlock(result);
+        [self dismiss];
     }
 }
 
@@ -265,8 +291,9 @@
         [self.selectedIndexs removeObject:index];   //去掉
         cell.selectedOrder = 0;
     }else {
-        if (self.selectedIndexs.count > MAX_SELECTED_IMG_NUM) {
-//            [HudManager showWord:[NSString stringWithFormat:@"最多可以选择%ld张", (long)MAX_SELECTED_IMG_NUM]];
+        if (self.selectedIndexs.count >= MAX_SELECTED_IMG_NUM) {
+            NSString *tip = [NSString stringWithFormat:@"当前设置最多可以选择%ld张", (long)MAX_SELECTED_IMG_NUM];
+            NSLog(@"%@", tip);
             return;
         }
         [self.selectedIndexs addObject:index];  //加上
@@ -299,45 +326,6 @@
         NSIndexPath *cellPath = [_pickerCollection indexPathForCell:cell];
         cell.selectedOrder = [self imgIndexAtSelectedArray:cellPath];
     }
-}
-
-#pragma mark - 其他选中事件
-- (void)burstTouched:(PHAsset *)asset {
-//    [HudManager showLoading];
-    __weak typeof(self) weakSelf = self;
-    
-//    [SystemUtils burstimgsWithPhasset:asset completion:^(NSMutableArray *images) {
-//        [HudManager hideLoading];
-//        [weakSelf pushEditCtrlWith:images type:GifFromBurst];
-//    }];
-}
-
-- (void)livephotoTouched:(PHAsset *)asset {
-    if (@available(iOS 9.1, *)) {
-//        [HudManager showLoading];
-        __weak typeof(self) weakSelf = self;
-        
-        PHLivePhotoRequestOptions *option = [[PHLivePhotoRequestOptions alloc] init];
-        CGSize size = CGSizeMake(asset.pixelWidth, asset.pixelHeight);
-        [[PHImageManager defaultManager] requestLivePhotoForAsset:asset targetSize:size contentMode:PHImageContentModeAspectFill options:option resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
-            if (livePhoto && [info.allKeys containsObject:PHImageResultIsDegradedKey]) {    //这个方法会调用超过一次，我们取其中一次就好了
-                
-                
-                
-            }else if(!livePhoto) {
-//                [HudManager hideLoading];
-//                [HudManager showWord:@"phasset --> phlivephoto faild"];
-            }
-        }]; //phasset -->avasset block
-    }
-}
-
-- (void)videoTouched:(PHAsset *)asset {
-//    [HudManager showLoading];
-    
-    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable avasset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
-        
-    }];
 }
 
 #pragma mark - other

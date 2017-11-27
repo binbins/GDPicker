@@ -6,6 +6,7 @@
 //
 
 #import <UIKit/UIKit.h>
+@import Photos;
 
 typedef NS_ENUM(NSInteger, PickerType)
 {
@@ -17,6 +18,12 @@ typedef NS_ENUM(NSInteger, PickerType)
 };
 
 @interface GDPickerCtrl : UIViewController
-@property (nonatomic, assign)PickerType pickerType;
+@property (nonatomic, assign) PickerType pickerType;
+
+- (instancetype)initWithPickerType:(PickerType)typeType CompleteBlock:(void(^)(NSArray<PHAsset *> *resultArr))completeBlock;
+
+- (void)showIn:(UIViewController *)ctrl;
+
+- (void)dismiss;
 
 @end

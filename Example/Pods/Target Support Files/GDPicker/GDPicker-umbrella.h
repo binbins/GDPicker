@@ -12,6 +12,7 @@
 
 #import "GDPickerCell.h"
 #import "GDPickerCtrl.h"
+#import "GDUtils.h"
 #import "TipView.h"
 
 FOUNDATION_EXPORT double GDPickerVersionNumber;

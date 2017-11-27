@@ -42,27 +42,60 @@
 #pragma mark - out let
 
 - (IBAction)singImgTouched:(id)sender {
-    
-    NSString *nibName = NSStringFromClass([GDPickerCtrl class]);
-    NSBundle *pickerBundle = [NSBundle bundleForClass:[GDPickerCtrl class]];
-    GDPickerCtrl *picker = [[GDPickerCtrl alloc] initWithNibName:nibName bundle:pickerBundle];
-    picker.pickerType = PickerTypeSinglePhoto;
-    [self presentViewController:picker animated:YES completion:nil];
+    [self showPicker:PickerTypeSinglePhoto];
 }
 
 - (IBAction)multipleImgTouched:(id)sender {
+    [self showPicker:PickerTypeManyPhoto];
 }
 
 - (IBAction)burstImgTouched:(id)sender {
+    [self showPicker:PickerTypeBurst];
 }
 
 - (IBAction)videoTouched:(id)sender {
+    [self showPicker:PickerTypeVideo];
 }
 
 - (IBAction)livephotoTouched:(id)sender {
+    [self showPicker:PickeTypeLivephoto];
 }
 
-- (IBAction)gitTouched:(id)sender {
+- (IBAction)gifTouched:(id)sender {
+}
+
+#pragma mark - show & process
+
+- (void)showPicker:(PickerType)pickerType {
+    
+    GDPickerCtrl *picker = [[GDPickerCtrl alloc] initWithPickerType:pickerType CompleteBlock:^(NSArray *resultArr) {
+        __weak typeof(self) weakSelf = self;
+        
+        if (pickerType == PickerTypeBurst) {
+            PHAsset *burst = [resultArr firstObject];
+            [GDUtils burstimgsWithPhasset:burst completion:^(NSMutableArray *images) {
+                [weakSelf reloadCollection:images];
+            }];
+        }else {
+            NSLog(@"转化为图片中...");
+            
+            [GDUtils imgsWithPhassetArr:resultArr completion:^(NSMutableArray *images) {
+                NSLog(@"转化图片结束");
+                [weakSelf reloadCollection:images];
+            }];
+        }
+    }];
+    
+    [picker showIn:self];
+}
+
+- (void)reloadCollection:(NSArray *)imgs {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.resultArray removeAllObjects];
+        [self.resultArray addObjectsFromArray:imgs];
+        [_resultCollection reloadData];
+    });
 }
 
 #pragma mark - collectiondelegate
@@ -76,19 +109,19 @@
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     
-    return 3;
+    NSInteger count = self.resultArray.count;
+    return count;
 }
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     
     ResultCell *cell = (ResultCell *)[collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([ResultCell class]) forIndexPath:indexPath];
+    
+    UIImage *img = self.resultArray[indexPath.row];
+    [cell.cover setImage:img];
     return cell;
 }
 
-- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    
-    
-}
 
 
 
