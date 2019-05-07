@@ -29,7 +29,7 @@
 
 /** 从phasset返回所有连拍图片
  * phasset : 从相册取到的连拍代表
- * @return : 所有的连拍图片
+ *  : 所有的连拍图片
  */
 + (void)burstimgsWithPhasset:(PHAsset *)phasset completion:(void (^)(NSMutableArray *images))completionBlock;
 

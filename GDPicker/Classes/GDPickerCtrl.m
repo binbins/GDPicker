@@ -92,16 +92,18 @@ typedef void (^DoneBlock)(NSArray *arr);
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
+    
     if (!_isNotFirstAppear) {   //有点拗口
         _isNotFirstAppear = YES;
+        __weak typeof(self) weakSelf = self;
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_pickerCollection reloadData];
+            [weakSelf.pickerCollection reloadData];
             if (self.pickerModels.count > 0) {
                 [self.tipsView stateHide];
                 NSIndexPath *endIndex = [NSIndexPath indexPathForItem:self.pickerModels.count-1 inSection:0];
-                [_pickerCollection scrollToItemAtIndexPath:endIndex atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
+                [weakSelf.pickerCollection scrollToItemAtIndexPath:endIndex atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
             }else {
-                [self.tipsView stateNoResult];
+                [weakSelf.tipsView stateNoResult];
             }
         });
     }

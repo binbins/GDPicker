@@ -62,20 +62,22 @@
     options.networkAccessAllowed = YES;
     
     CGSize size = [GDUtils sizeMaxWidth:150.f withAsset:asset];
+    __weak typeof(self) weakSelf = self;
     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
-            [_coverImg setImage:result];
+            [weakSelf.coverImg setImage:result];
         });
     }];
 }
 
 - (void)initTimeLabel:(PHAsset *)asset {
     
+    __weak typeof(self) weakSelf = self;
     [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
         float videoLength = (float)asset.duration.value / asset.duration.timescale;
         dispatch_async(dispatch_get_main_queue(), ^{
-            _videoTimeLabel.text = [NSString stringWithFormat:@"%lds", (long)videoLength];
+            weakSelf.videoTimeLabel.text = [NSString stringWithFormat:@"%lds", (long)videoLength];
         });
     }];
 }

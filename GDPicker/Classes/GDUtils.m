@@ -33,26 +33,35 @@
 
     NSMutableArray *resultImgs = [NSMutableArray array];
     NSUInteger imgCount = phassetArr.count;
+    
+    dispatch_group_t group = dispatch_group_create();   //所以异步操作完成后，执行动作
+    NSConditionLock *cLock = [[NSConditionLock alloc] initWithCondition:0]; //按顺序处理回调结果
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+    
     for (int i = 0; i<imgCount; i++) {
         PHAsset *each = [phassetArr objectAtIndex:i];
-        NSLock *threadLock = [[NSLock alloc] init];
         CGSize targetSize = [GDUtils sizeMaxWidth:250.f withAsset:each];
+//        NSLog(@"开始转化:%d", i);
+        dispatch_group_enter(group);
         [[PHImageManager defaultManager] requestImageForAsset:each targetSize:targetSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+//            NSLog(@"得到结果:%d", i);
             
-            [threadLock lock];
-            if (result) {
-                [resultImgs addObject:result];
-            }
-            if (resultImgs.count == imgCount){
-                completionBlock(resultImgs);
-            }
-            [threadLock unlock];
+            dispatch_async(queue, ^{
+                [cLock lockWhenCondition:i];
+                if (result) {
+                    [resultImgs addObject:result];
+//                    NSLog(@"使用结果:%d", i);
+                }
+                [cLock unlockWithCondition:i+1];
+                dispatch_group_leave(group);
+            });
+            
         }];
     }
     
-    if (imgCount == 0) {
-        completionBlock(nil);
-    }
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        completionBlock(resultImgs);
+    });
 }
 
 + (void)burstimgsWithPhasset:(PHAsset *)phasset completion:(void (^)(NSMutableArray *images))completionBlock {
@@ -71,26 +80,34 @@
     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     requestOptions.synchronous = YES;
     
-    NSLock *threadLock = [[NSLock alloc] init];
+    dispatch_group_t group = dispatch_group_create();
+    NSConditionLock *lock = [[NSConditionLock alloc] initWithCondition:0];
+    dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
+//    NSLock *threadLock = [[NSLock alloc] init];
     for (int i = 0; i<burstCount; i++) {
         PHAsset *each = [fetchResult objectAtIndex:i];
         CGSize targetSize = [GDUtils sizeMaxWidth:300.0f withAsset:each];//尺寸大容易崩溃
+        dispatch_group_enter(group);
+        
         [[PHImageManager defaultManager] requestImageForAsset:each targetSize:targetSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
-            
-            [threadLock lock];
-            if (result) {
-                [resultImgs addObject:result];
-            }
-            if (resultImgs.count == burstCount){
-                completionBlock(resultImgs);
-            }
-            //            NSLog(@"phasset 转 图片---%@", index);
-            [threadLock unlock];
+            dispatch_async(queue, ^{
+                NSLog(@"得到结果:%d", i);
+                
+                [lock lockWhenCondition:i];
+                if (result) {
+                    [resultImgs addObject:result];
+                    NSLog(@"使用结果:%d", i);
+                }
+                //            NSLog(@"phasset 转 图片---%@", index);
+                dispatch_group_leave(group);
+                [lock unlockWithCondition:i+1];
+            });
         }];
     }
-    if (burstCount == 0) {
-        completionBlock(nil);
-    }
+    
+    dispatch_group_notify(group, dispatch_get_main_queue(), ^{
+        completionBlock(resultImgs);
+    });
 }
 
 

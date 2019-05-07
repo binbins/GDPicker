@@ -7,350 +7,350 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		140A2280D387C625927D1955E20A8CE5 /* quxiao@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 508C99A9600F197D2A19BB822CC0B19E /* quxiao@2x.png */; };
-		14BE0D0D0718A3AD03C147417E284A73 /* GDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = C55D184FF7BC8BE97C2DAD6D45B8A169 /* GDUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A714DCB69E1A756568EBC7912D2DA94 /* back@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 677D988C91F8ED404A5657F286007B23 /* back@2x.png */; };
-		27590DBD9871F07E9B753FC5B83AE6BB /* done2@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = B423CF7161F8ECC2DA232E1A6B166F51 /* done2@2x.png */; };
-		3B1296EBACF2465622C7139B8EFF3ED6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		5A704187A7E7287225741FA3D314B613 /* nonet.png in Sources */ = {isa = PBXBuildFile; fileRef = F72EB7A0F904FCBBCDF6A033F37DDED9 /* nonet.png */; };
-		5AF8A7D25C223F4A456AB7A52629719F /* Pods-GDPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CBFFD524B6E4BAC5FD3C9B14580B4E51 /* Pods-GDPicker_Example-dummy.m */; };
-		5CB3A851658EE60F267ACCD4DABE7268 /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EF17DD76486485D902388650146051 /* TipView.m */; };
-		6131CC3F70C1279D1B7AA30C81A2B705 /* livemark@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = AE94C58BC42B6C91CA977D9DD7F957F6 /* livemark@3x.png */; };
-		6D50F0962F73E95AF874FD7B4013EFEF /* GDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 76F20F3E74B833621E2E55A9B109B20D /* GDUtils.m */; };
-		74EAD33EEDAC2DCB20E706020A05B38B /* Pods-GDPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C872226825F6683EDEAD30192050873 /* Pods-GDPicker_Tests-dummy.m */; };
-		869536F914A877176F84E91054A77E94 /* nofavor.png in Sources */ = {isa = PBXBuildFile; fileRef = 937C3540AB3CA738078CFC519449D445 /* nofavor.png */; };
-		8BF62B39ECBD55DF31F063224577FA57 /* GDPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C865523A0ACA30313C4469ACC50651BA /* GDPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9A4642061DE9F7CA98C0C85CD9466272 /* GDPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = 7B8DCB57D967C50D21F7C14CFF318BEF /* GDPickerCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9D6FEDB17CF6A81946B61AC9AD12356D /* Pods-GDPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F662A79F2FD377790150B4CFAE3D9F25 /* Pods-GDPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AAA1D6DD5517C97F18DF6D800D237380 /* TipView.h in Headers */ = {isa = PBXBuildFile; fileRef = 8A88DFF65C397BAE3B4CBB69B2C69D79 /* TipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF6DF0F2C70C7DD6B2A2740DAA05D5D3 /* livemark@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 6E3E2C282D49C3871F4FB74847C92DB6 /* livemark@2x.png */; };
-		B0E1C22A2AD9B710FBF898812CCBC804 /* Pods-GDPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D6E6133FFE64773CDE5AAA3A082142A /* Pods-GDPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B50D3073AB77D3575967252D730E493E /* GDPickerCtrl.xib in Sources */ = {isa = PBXBuildFile; fileRef = 25E922442E16AF2B2688B5A5D06A733E /* GDPickerCtrl.xib */; };
-		C4A7FDC1DAAE783D05C64AF9B3038CBE /* GDPickerCtrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 12343E5B0D7744406BCD8CF2B3941A9A /* GDPickerCtrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C53CB006AF35E668A877D4EC5EA9D816 /* GDPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A5DB08D05014AFD9D84C9E856AEC098B /* GDPicker-dummy.m */; };
-		C569807B7FBC61E1C10D1D7848285F7A /* back@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 5543F8DD072A20BD88F10C8C94F860BA /* back@3x.png */; };
-		CF5EFEDA71CA21A29CF1EB6CD7BE1FB4 /* GDPickerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = 2033BFD9623A4DD3C3E040AFBCD3C2DD /* GDPickerCell.xib */; };
-		D5549C32513D4013682DAF8BA23EF9A7 /* quxiao@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 5F96133F444C25FA94E2BEF0B514FE4F /* quxiao@3x.png */; };
-		D7DF24B83A548FE8AE8ED2F56872E07D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		D921074DA78DF271EF754038271BE011 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */; };
-		E38FAC2AD6BDA5297122D35C1702D61F /* GDPickerCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A056ACA1458278E8EEA54B60564C4ED /* GDPickerCtrl.m */; };
-		E4B2BD8BF7D414DC5F1EDABC6E54D108 /* noresult.png in Sources */ = {isa = PBXBuildFile; fileRef = 7EC005AC3E6277F926C987E2A2DD52EC /* noresult.png */; };
-		E4EEBDEB068159844A08324F9666AB2C /* GDPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = EB2CF4207D275D166EADF8D0AD9A8162 /* GDPickerCell.m */; };
-		E5A17FAC1694E421A95EE1CFDAA194C3 /* done2@3x_2.png in Sources */ = {isa = PBXBuildFile; fileRef = 4924993BF3F57A4255A9666A023CCADC /* done2@3x_2.png */; };
+		02601792BA190E9F6335E51BB21DD2B0 /* back@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 68546E59FD64031D480C24A9DB986F51 /* back@2x.png */; };
+		1174A27DEA642886CD4562B5286F8FB2 /* TipView.h in Headers */ = {isa = PBXBuildFile; fileRef = CACB222ECC89ED3686D8DFFE89693BFB /* TipView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		17F6C98D99C809D09CC7C9D9F933C17C /* nonet.png in Sources */ = {isa = PBXBuildFile; fileRef = 889B8E45BF8DFB54BA3000DFD5C2B4F8 /* nonet.png */; };
+		230E64B526FB140AF4C0BDAAEAA0C66A /* livemark@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 0EA1AC6BAAA4062A064847681FE7C90F /* livemark@3x.png */; };
+		25F84E175086612D0C5807A4AA2F5037 /* done2@3x_2.png in Sources */ = {isa = PBXBuildFile; fileRef = 54218AB1F4A2FD23997DC74926806A9E /* done2@3x_2.png */; };
+		25FAA01857FE2254383608CF57720CC3 /* GDPickerCtrl.h in Headers */ = {isa = PBXBuildFile; fileRef = 5DFC194AD2BF13D167DC84CD28FF16DA /* GDPickerCtrl.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		28A2D236615B224453C4ACD3147B940A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		2C97D47B36CC09E57C9F05C152D3EC85 /* Pods-GDPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC65BA4BAA40E846C6A65E710D9A570F /* Pods-GDPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		315276F3181092D5591FE7390A952198 /* livemark@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 695021A6FE56EB966C4FC65C5CE537C7 /* livemark@2x.png */; };
+		3A4A97B372495310B54DDFFE6773F658 /* Pods-GDPicker_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4DCA834A9A7E5E552F42D159B4CC34DA /* Pods-GDPicker_Tests-dummy.m */; };
+		3DD14A7FFACBE776BB81208BCFB599B9 /* GDPickerCtrl.m in Sources */ = {isa = PBXBuildFile; fileRef = D6F9B4B6EF031DACF4154E8883A7C86B /* GDPickerCtrl.m */; };
+		54E49F31BECF4CA14F5F50ECFE9DC992 /* done2@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = 0C61CED0FCA33C2914C820AE795012D1 /* done2@2x.png */; };
+		7904FA9845A16B863777E0CAEB612B68 /* GDPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 20ADDE04DE46D3DD2FA1F7DAF2C45C4F /* GDPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7E6A7BDE67D8970B6CEE5A72765C891B /* GDUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F1D2EDA8EB6D637E0E19EA0380050A4 /* GDUtils.m */; };
+		8F34148C3984F4AEFEB0C5550E8EF622 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		9049C4F4D1CAD1B59DC20CB16101903F /* quxiao@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 39176C0B68C1486B41D9D1879A1B6216 /* quxiao@3x.png */; };
+		92370ABF6DDF9FE7C63226C2B8CD61C4 /* Pods-GDPicker_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 06697CE0251535D22D2C6D765057E0CD /* Pods-GDPicker_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9D5F9B9C202508A7C74168EEE111A3FC /* TipView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2574EECB1278E640D4D56C45A2E6DBBD /* TipView.m */; };
+		A2E4232B80FBAD0A875A1A5D123F93C1 /* GDUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = 08197028B46B6FB1EB92020FAC0B20FB /* GDUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B23E6BF3D689F69C266532EC8DDE0041 /* quxiao@2x.png in Sources */ = {isa = PBXBuildFile; fileRef = D7FBB50B24AAFB5F091EB69A0C3BCD07 /* quxiao@2x.png */; };
+		B99D0C66C5FE137ACA126D6ED008FDA3 /* GDPickerCtrl.xib in Sources */ = {isa = PBXBuildFile; fileRef = FDA50B24786745E6AFD3C115DC58E895 /* GDPickerCtrl.xib */; };
+		BF41935CFF21992F595647519E188E63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */; };
+		C636CBAAB483800F5DFE2515E57B59DE /* noresult.png in Sources */ = {isa = PBXBuildFile; fileRef = FFB6D2D7949C24D754BD5FB83023A537 /* noresult.png */; };
+		D09692619F8CAC97A820D10018CB6EBC /* GDPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A8DB130BC87808E674DBA88AF79CC74 /* GDPicker-dummy.m */; };
+		D3CEB4410D3CFD51C4D9EDC3BB4ECFBE /* GDPickerCell.h in Headers */ = {isa = PBXBuildFile; fileRef = E3284BC9FCD6A96726F8B7DD875EC34D /* GDPickerCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D5779675B1753FBD5ABE9705062B06D8 /* GDPickerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B77446BD4A6A93EF922EF54024B0AE /* GDPickerCell.m */; };
+		D65DD0EA72370F751CCF2D772CE9B66D /* Pods-GDPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 14D43EC1D19F4DD42061AB7D2BA23089 /* Pods-GDPicker_Example-dummy.m */; };
+		D766025E1E4FF8CFB8AB70F30FBC58AC /* GDPickerCell.xib in Sources */ = {isa = PBXBuildFile; fileRef = FE1865AAF35CF4E9A86563857AF89EE8 /* GDPickerCell.xib */; };
+		E5510C7A675C644385214A1CFD64267F /* back@3x.png in Sources */ = {isa = PBXBuildFile; fileRef = 006E32C41DA0A960F16FF129995C733F /* back@3x.png */; };
+		FA3034B7228FF1FCD222BA64DFF74847 /* nofavor.png in Sources */ = {isa = PBXBuildFile; fileRef = 32C609C6FE497EBC2B72CA1E5490446D /* nofavor.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3C319E9FD9614B277BFAA7D2C6B2B571 /* PBXContainerItemProxy */ = {
+		39A06EC5118B3065968BC0ABF49A2C9B /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = A6D172A15465E3026BB35B63BE40CC3A;
+			remoteGlobalIDString = E9140E755382BC905C6BFC01E1AEEBAD;
 			remoteInfo = GDPicker;
+		};
+		4A67AF64B27ACA72879D982E3552D5F4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E9F5C0926019D19FC2C2C7B0D787173C;
+			remoteInfo = "Pods-GDPicker_Example";
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A056ACA1458278E8EEA54B60564C4ED /* GDPickerCtrl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GDPickerCtrl.m; sourceTree = "<group>"; };
-		0E8B5F34DD533591E47C3292F840B336 /* Pods_GDPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GDPicker_Example.framework; path = "Pods-GDPicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		1128815F646DA4BC4584F2F2711D3C3F /* Pods-GDPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		12343E5B0D7744406BCD8CF2B3941A9A /* GDPickerCtrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GDPickerCtrl.h; sourceTree = "<group>"; };
-		1C5A3D18CD376F809DC567B8E236EEBF /* Pods-GDPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GDPicker_Example.modulemap"; sourceTree = "<group>"; };
-		2033BFD9623A4DD3C3E040AFBCD3C2DD /* GDPickerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GDPickerCell.xib; sourceTree = "<group>"; };
-		25E922442E16AF2B2688B5A5D06A733E /* GDPickerCtrl.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; path = GDPickerCtrl.xib; sourceTree = "<group>"; };
-		2709B5D0D142DD798F145EB7BE904313 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CF1A81603968D35F28091C0445450E1 /* Pods-GDPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		439C6FED4330B6E6D6A7AAA5D032FDB7 /* Pods-GDPicker_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Tests-resources.sh"; sourceTree = "<group>"; };
-		4924993BF3F57A4255A9666A023CCADC /* done2@3x_2.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "done2@3x_2.png"; sourceTree = "<group>"; };
-		508C99A9600F197D2A19BB822CC0B19E /* quxiao@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "quxiao@2x.png"; sourceTree = "<group>"; };
-		5543F8DD072A20BD88F10C8C94F860BA /* back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "back@3x.png"; sourceTree = "<group>"; };
-		5F96133F444C25FA94E2BEF0B514FE4F /* quxiao@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "quxiao@3x.png"; sourceTree = "<group>"; };
-		677D988C91F8ED404A5657F286007B23 /* back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "back@2x.png"; sourceTree = "<group>"; };
-		6E3E2C282D49C3871F4FB74847C92DB6 /* livemark@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "livemark@2x.png"; sourceTree = "<group>"; };
-		71200633975171D645559B2E6626DF45 /* Pods-GDPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		76F20F3E74B833621E2E55A9B109B20D /* GDUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GDUtils.m; sourceTree = "<group>"; };
-		7B8DCB57D967C50D21F7C14CFF318BEF /* GDPickerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GDPickerCell.h; sourceTree = "<group>"; };
-		7B8F5817D7E0DE3C5392885670448C3C /* Pods-GDPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
-		7C872226825F6683EDEAD30192050873 /* Pods-GDPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Tests-dummy.m"; sourceTree = "<group>"; };
-		7EC005AC3E6277F926C987E2A2DD52EC /* noresult.png */ = {isa = PBXFileReference; includeInIndex = 1; path = noresult.png; sourceTree = "<group>"; };
-		88EF17DD76486485D902388650146051 /* TipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = TipView.m; sourceTree = "<group>"; };
-		8A88DFF65C397BAE3B4CBB69B2C69D79 /* TipView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = TipView.h; sourceTree = "<group>"; };
-		8D712BA369CB3761F1F45D47E944AB5A /* GDPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GDPicker.xcconfig; sourceTree = "<group>"; };
-		937C3540AB3CA738078CFC519449D445 /* nofavor.png */ = {isa = PBXFileReference; includeInIndex = 1; path = nofavor.png; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97B93748467DB58B3F3F021695F5C9E3 /* Pods-GDPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		9D6E6133FFE64773CDE5AAA3A082142A /* Pods-GDPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
-		A5DB08D05014AFD9D84C9E856AEC098B /* GDPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GDPicker-dummy.m"; sourceTree = "<group>"; };
-		A69E7ED32F6E75866B5297C1406422A6 /* GDPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GDPicker.framework; path = GDPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		AE94C58BC42B6C91CA977D9DD7F957F6 /* livemark@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "livemark@3x.png"; sourceTree = "<group>"; };
-		B18FDA204FD0A5A6CCFE4749352740F2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B3A0C70A3F0DD6DF7E9EBC66DBD8D8CD /* Pods-GDPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		B423CF7161F8ECC2DA232E1A6B166F51 /* done2@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; path = "done2@2x.png"; sourceTree = "<group>"; };
-		B56B4C8D5A1EAC622F519427056CAEF2 /* Pods_GDPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_GDPicker_Tests.framework; path = "Pods-GDPicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B98D0CC75AEDD2CFE8D1B4C4BDB88E5F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BE785FC27DB550158C0C3B81B0BE267F /* Pods-GDPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-GDPicker_Tests.modulemap"; sourceTree = "<group>"; };
-		C46F045FE6D937DEBA0564A79C87C887 /* GDPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-prefix.pch"; sourceTree = "<group>"; };
-		C55D184FF7BC8BE97C2DAD6D45B8A169 /* GDUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = GDUtils.h; sourceTree = "<group>"; };
-		C865523A0ACA30313C4469ACC50651BA /* GDPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-umbrella.h"; sourceTree = "<group>"; };
-		CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		CBFFD524B6E4BAC5FD3C9B14580B4E51 /* Pods-GDPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Example-dummy.m"; sourceTree = "<group>"; };
-		D5F03A246DB5E6BC88016FF0A13FBE81 /* GDPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = GDPicker.modulemap; sourceTree = "<group>"; };
-		DB9F1EE3A2FF6FAAF708A058A953C0F9 /* Pods-GDPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		DF01F72C80729E566E74A438720C87B6 /* Pods-GDPicker_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Example-resources.sh"; sourceTree = "<group>"; };
-		E658EFE58F69720842013F9FB7A6D484 /* Pods-GDPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
-		EB2CF4207D275D166EADF8D0AD9A8162 /* GDPickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = GDPickerCell.m; sourceTree = "<group>"; };
-		F451787F1A8B2DE846CD3AB99E130DC0 /* Pods-GDPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		F662A79F2FD377790150B4CFAE3D9F25 /* Pods-GDPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDPicker_Example-umbrella.h"; sourceTree = "<group>"; };
-		F72EB7A0F904FCBBCDF6A033F37DDED9 /* nonet.png */ = {isa = PBXFileReference; includeInIndex = 1; path = nonet.png; sourceTree = "<group>"; };
-		FF22925B8FA358837AAD4C9AEE2EBA70 /* Pods-GDPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		006E32C41DA0A960F16FF129995C733F /* back@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "back@3x.png"; sourceTree = "<group>"; };
+		06697CE0251535D22D2C6D765057E0CD /* Pods-GDPicker_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDPicker_Example-umbrella.h"; sourceTree = "<group>"; };
+		08197028B46B6FB1EB92020FAC0B20FB /* GDUtils.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDUtils.h; path = GDPicker/Classes/GDUtils.h; sourceTree = "<group>"; };
+		0C61CED0FCA33C2914C820AE795012D1 /* done2@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "done2@2x.png"; sourceTree = "<group>"; };
+		0CF94A33493A4E8B318CBF3E329505D5 /* Pods_GDPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0EA1AC6BAAA4062A064847681FE7C90F /* livemark@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "livemark@3x.png"; sourceTree = "<group>"; };
+		1496B1A32065CFF53597023C35871E32 /* Pods-GDPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GDPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		14D43EC1D19F4DD42061AB7D2BA23089 /* Pods-GDPicker_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Example-dummy.m"; sourceTree = "<group>"; };
+		1AB367AA045DED59A7EF9099D4104C14 /* Pods-GDPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
+		1FBBC14C1594A3976FAE9A3D75DE7FBB /* Pods-GDPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		20ADDE04DE46D3DD2FA1F7DAF2C45C4F /* GDPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-umbrella.h"; sourceTree = "<group>"; };
+		2574EECB1278E640D4D56C45A2E6DBBD /* TipView.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = TipView.m; path = GDPicker/Classes/TipView.m; sourceTree = "<group>"; };
+		32C609C6FE497EBC2B72CA1E5490446D /* nofavor.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = nofavor.png; sourceTree = "<group>"; };
+		38ED2A41F2FDD0080ADE1D51A4D44729 /* Pods-GDPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		39176C0B68C1486B41D9D1879A1B6216 /* quxiao@3x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "quxiao@3x.png"; sourceTree = "<group>"; };
+		4031B89462889DBE31A936E68BA0177D /* Pods-GDPicker_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-GDPicker_Example-frameworks.sh"; sourceTree = "<group>"; };
+		41765BB7DFFD79CE892D9953B0B4F70D /* Pods-GDPicker_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4DCA834A9A7E5E552F42D159B4CC34DA /* Pods-GDPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-GDPicker_Tests-dummy.m"; sourceTree = "<group>"; };
+		4E5F2CCA1A288D3FF70C72B81CB3F566 /* GDPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GDPicker.xcconfig; sourceTree = "<group>"; };
+		54218AB1F4A2FD23997DC74926806A9E /* done2@3x_2.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "done2@3x_2.png"; sourceTree = "<group>"; };
+		5DFC194AD2BF13D167DC84CD28FF16DA /* GDPickerCtrl.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPickerCtrl.h; path = GDPicker/Classes/GDPickerCtrl.h; sourceTree = "<group>"; };
+		6288A1F75007A71FE05252E234D1466F /* Pods-GDPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-GDPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6551F8494D232BA0B6FEDE55DFF8BCB8 /* Pods_GDPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68546E59FD64031D480C24A9DB986F51 /* back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
+		695021A6FE56EB966C4FC65C5CE537C7 /* livemark@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "livemark@2x.png"; sourceTree = "<group>"; };
+		75467E65756CFBA50E31FA78C728CA63 /* GDPicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GDPicker.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		889B8E45BF8DFB54BA3000DFD5C2B4F8 /* nonet.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = nonet.png; sourceTree = "<group>"; };
+		8F1D2EDA8EB6D637E0E19EA0380050A4 /* GDUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDUtils.m; path = GDPicker/Classes/GDUtils.m; sourceTree = "<group>"; };
+		95B77446BD4A6A93EF922EF54024B0AE /* GDPickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPickerCell.m; path = GDPicker/Classes/GDPickerCell.m; sourceTree = "<group>"; };
+		9A8DB130BC87808E674DBA88AF79CC74 /* GDPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GDPicker-dummy.m"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9E1E1CC2A3093B3F8FEDA17CB059826B /* GDPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GDPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A785C5B539824AF8B8A2642963EBD2DE /* GDPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GDPicker-prefix.pch"; sourceTree = "<group>"; };
+		A99310EE1A8D53B050D23B6FFCF7C137 /* GDPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GDPicker-Info.plist"; sourceTree = "<group>"; };
+		B1AF29438C5384920C287078325F6FDD /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		BA53F75BDCC71D83D0D2C38BCD73DD0C /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		BB7E782B68C304C19C9E01910B410D47 /* Pods-GDPicker_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Tests-Info.plist"; sourceTree = "<group>"; };
+		BE8F8E70E0342C6415B9BD64CAE62C8B /* Pods-GDPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-GDPicker_Example.modulemap"; sourceTree = "<group>"; };
+		C1543F6D7B957E30BB33F359AFFDC901 /* Pods-GDPicker_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-GDPicker_Example-Info.plist"; sourceTree = "<group>"; };
+		C3CC77A2D65C26DF7C4B26C0DA28E336 /* Pods-GDPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		CACB222ECC89ED3686D8DFFE89693BFB /* TipView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = TipView.h; path = GDPicker/Classes/TipView.h; sourceTree = "<group>"; };
+		CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		D6F9B4B6EF031DACF4154E8883A7C86B /* GDPickerCtrl.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPickerCtrl.m; path = GDPicker/Classes/GDPickerCtrl.m; sourceTree = "<group>"; };
+		D7FBB50B24AAFB5F091EB69A0C3BCD07 /* quxiao@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "quxiao@2x.png"; sourceTree = "<group>"; };
+		DC9FEB184A1048C5F52F4628EA912D39 /* Pods-GDPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		DFF6DA2E60764B1BABA5718DF53F05E4 /* Pods-GDPicker_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-GDPicker_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		E3284BC9FCD6A96726F8B7DD875EC34D /* GDPickerCell.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GDPickerCell.h; path = GDPicker/Classes/GDPickerCell.h; sourceTree = "<group>"; };
+		E7B128B641CAC5F676E229881449A460 /* GDPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GDPicker.modulemap; sourceTree = "<group>"; };
+		FC65BA4BAA40E846C6A65E710D9A570F /* Pods-GDPicker_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-GDPicker_Tests-umbrella.h"; sourceTree = "<group>"; };
+		FDA50B24786745E6AFD3C115DC58E895 /* GDPickerCtrl.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GDPickerCtrl.xib; path = GDPicker/Classes/GDPickerCtrl.xib; sourceTree = "<group>"; };
+		FE1865AAF35CF4E9A86563857AF89EE8 /* GDPickerCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = GDPickerCell.xib; path = GDPicker/Classes/GDPickerCell.xib; sourceTree = "<group>"; };
+		FFB6D2D7949C24D754BD5FB83023A537 /* noresult.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = noresult.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		69C6A7766860CE21926D741E19DCAA8B /* Frameworks */ = {
+		61555E8D355E947B21A434EB6024AD00 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D921074DA78DF271EF754038271BE011 /* Foundation.framework in Frameworks */,
+				8F34148C3984F4AEFEB0C5550E8EF622 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		81C1238C22C9026325823CACE8CD6DD6 /* Frameworks */ = {
+		C33D5083266ED721E83F7B3D786BE160 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3B1296EBACF2465622C7139B8EFF3ED6 /* Foundation.framework in Frameworks */,
+				28A2D236615B224453C4ACD3147B940A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CCDC160A6F8E2EF3081C1D3F23C12C7C /* Frameworks */ = {
+		CC5F9C4AEC0446A00C6050BDF799B4DF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7DF24B83A548FE8AE8ED2F56872E07D /* Foundation.framework in Frameworks */,
+				BF41935CFF21992F595647519E188E63 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		07DF5772748CA67BCFADCEE4F67852BF /* Support Files */ = {
+		09608ABA7CEB177D279E9C51411867CD /* gd_imgs */ = {
 			isa = PBXGroup;
 			children = (
-				D5F03A246DB5E6BC88016FF0A13FBE81 /* GDPicker.modulemap */,
-				8D712BA369CB3761F1F45D47E944AB5A /* GDPicker.xcconfig */,
-				A5DB08D05014AFD9D84C9E856AEC098B /* GDPicker-dummy.m */,
-				C46F045FE6D937DEBA0564A79C87C887 /* GDPicker-prefix.pch */,
-				C865523A0ACA30313C4469ACC50651BA /* GDPicker-umbrella.h */,
-				2709B5D0D142DD798F145EB7BE904313 /* Info.plist */,
+				68546E59FD64031D480C24A9DB986F51 /* back@2x.png */,
+				006E32C41DA0A960F16FF129995C733F /* back@3x.png */,
+				0C61CED0FCA33C2914C820AE795012D1 /* done2@2x.png */,
+				54218AB1F4A2FD23997DC74926806A9E /* done2@3x_2.png */,
+				695021A6FE56EB966C4FC65C5CE537C7 /* livemark@2x.png */,
+				0EA1AC6BAAA4062A064847681FE7C90F /* livemark@3x.png */,
+				32C609C6FE497EBC2B72CA1E5490446D /* nofavor.png */,
+				889B8E45BF8DFB54BA3000DFD5C2B4F8 /* nonet.png */,
+				FFB6D2D7949C24D754BD5FB83023A537 /* noresult.png */,
+				D7FBB50B24AAFB5F091EB69A0C3BCD07 /* quxiao@2x.png */,
+				39176C0B68C1486B41D9D1879A1B6216 /* quxiao@3x.png */,
 			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/GDPicker";
+			name = gd_imgs;
+			path = GDPicker/Classes/gd_imgs;
 			sourceTree = "<group>";
 		};
-		1AABE74D2A73B14FFB513F31CCB778DB /* Pods-GDPicker_Tests */ = {
+		29967B6C55890D6771A7116DB1C3D501 /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B18FDA204FD0A5A6CCFE4749352740F2 /* Info.plist */,
-				BE785FC27DB550158C0C3B81B0BE267F /* Pods-GDPicker_Tests.modulemap */,
-				DB9F1EE3A2FF6FAAF708A058A953C0F9 /* Pods-GDPicker_Tests-acknowledgements.markdown */,
-				FF22925B8FA358837AAD4C9AEE2EBA70 /* Pods-GDPicker_Tests-acknowledgements.plist */,
-				7C872226825F6683EDEAD30192050873 /* Pods-GDPicker_Tests-dummy.m */,
-				B3A0C70A3F0DD6DF7E9EBC66DBD8D8CD /* Pods-GDPicker_Tests-frameworks.sh */,
-				439C6FED4330B6E6D6A7AAA5D032FDB7 /* Pods-GDPicker_Tests-resources.sh */,
-				9D6E6133FFE64773CDE5AAA3A082142A /* Pods-GDPicker_Tests-umbrella.h */,
-				71200633975171D645559B2E6626DF45 /* Pods-GDPicker_Tests.debug.xcconfig */,
-				97B93748467DB58B3F3F021695F5C9E3 /* Pods-GDPicker_Tests.release.xcconfig */,
+				49EFFE84200C37F8EBFDFE708D48D465 /* GDPicker */,
 			);
-			name = "Pods-GDPicker_Tests";
-			path = "Target Support Files/Pods-GDPicker_Tests";
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		2671AFD2774FF77E6B6CF06AE1F5A28E /* Pods-GDPicker_Example */ = {
+		4657BFE33687E663D85D934F099139AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B98D0CC75AEDD2CFE8D1B4C4BDB88E5F /* Info.plist */,
-				1C5A3D18CD376F809DC567B8E236EEBF /* Pods-GDPicker_Example.modulemap */,
-				3CF1A81603968D35F28091C0445450E1 /* Pods-GDPicker_Example-acknowledgements.markdown */,
-				1128815F646DA4BC4584F2F2711D3C3F /* Pods-GDPicker_Example-acknowledgements.plist */,
-				CBFFD524B6E4BAC5FD3C9B14580B4E51 /* Pods-GDPicker_Example-dummy.m */,
-				7B8F5817D7E0DE3C5392885670448C3C /* Pods-GDPicker_Example-frameworks.sh */,
-				DF01F72C80729E566E74A438720C87B6 /* Pods-GDPicker_Example-resources.sh */,
-				F662A79F2FD377790150B4CFAE3D9F25 /* Pods-GDPicker_Example-umbrella.h */,
-				F451787F1A8B2DE846CD3AB99E130DC0 /* Pods-GDPicker_Example.debug.xcconfig */,
-				E658EFE58F69720842013F9FB7A6D484 /* Pods-GDPicker_Example.release.xcconfig */,
-			);
-			name = "Pods-GDPicker_Example";
-			path = "Target Support Files/Pods-GDPicker_Example";
-			sourceTree = "<group>";
-		};
-		2E81DDE9890CD5AF7135A8217317FE16 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A69E7ED32F6E75866B5297C1406422A6 /* GDPicker.framework */,
-				0E8B5F34DD533591E47C3292F840B336 /* Pods_GDPicker_Example.framework */,
-				B56B4C8D5A1EAC622F519427056CAEF2 /* Pods_GDPicker_Tests.framework */,
+				9E1E1CC2A3093B3F8FEDA17CB059826B /* GDPicker.framework */,
+				0CF94A33493A4E8B318CBF3E329505D5 /* Pods_GDPicker_Example.framework */,
+				6551F8494D232BA0B6FEDE55DFF8BCB8 /* Pods_GDPicker_Tests.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */ = {
+		486A916E5F41C74F820FE3CE3112C931 /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				CBB3DE36805AF21409EC968A9691732F /* Foundation.framework */,
+				75467E65756CFBA50E31FA78C728CA63 /* GDPicker.podspec */,
+				BA53F75BDCC71D83D0D2C38BCD73DD0C /* LICENSE */,
+				B1AF29438C5384920C287078325F6FDD /* README.md */,
 			);
-			name = iOS;
+			name = Pod;
 			sourceTree = "<group>";
 		};
-		7DB346D0F39D3F0E887471402A8071AB = {
+		49EFFE84200C37F8EBFDFE708D48D465 /* GDPicker */ = {
 			isa = PBXGroup;
 			children = (
-				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				E89EEDC9DB93F4D5FB8D2598CB0DF682 /* Development Pods */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				2E81DDE9890CD5AF7135A8217317FE16 /* Products */,
-				E2AFAF731F60DD37A1445C224A6544F3 /* Targets Support Files */,
-			);
-			sourceTree = "<group>";
-		};
-		83EC983310DF10D198798166CB237088 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				7B8DCB57D967C50D21F7C14CFF318BEF /* GDPickerCell.h */,
-				EB2CF4207D275D166EADF8D0AD9A8162 /* GDPickerCell.m */,
-				2033BFD9623A4DD3C3E040AFBCD3C2DD /* GDPickerCell.xib */,
-				12343E5B0D7744406BCD8CF2B3941A9A /* GDPickerCtrl.h */,
-				0A056ACA1458278E8EEA54B60564C4ED /* GDPickerCtrl.m */,
-				25E922442E16AF2B2688B5A5D06A733E /* GDPickerCtrl.xib */,
-				C55D184FF7BC8BE97C2DAD6D45B8A169 /* GDUtils.h */,
-				76F20F3E74B833621E2E55A9B109B20D /* GDUtils.m */,
-				8A88DFF65C397BAE3B4CBB69B2C69D79 /* TipView.h */,
-				88EF17DD76486485D902388650146051 /* TipView.m */,
-				CCF1008E19CF995C47BCDACB7373F11B /* gd_imgs */,
-			);
-			name = Classes;
-			path = Classes;
-			sourceTree = "<group>";
-		};
-		848AC9061BCBB5933FC0F726CB60EB5E /* GDPicker */ = {
-			isa = PBXGroup;
-			children = (
-				8F5F3F7FF8FE22102158CD76AEE0632D /* GDPicker */,
-				07DF5772748CA67BCFADCEE4F67852BF /* Support Files */,
+				E3284BC9FCD6A96726F8B7DD875EC34D /* GDPickerCell.h */,
+				95B77446BD4A6A93EF922EF54024B0AE /* GDPickerCell.m */,
+				FE1865AAF35CF4E9A86563857AF89EE8 /* GDPickerCell.xib */,
+				5DFC194AD2BF13D167DC84CD28FF16DA /* GDPickerCtrl.h */,
+				D6F9B4B6EF031DACF4154E8883A7C86B /* GDPickerCtrl.m */,
+				FDA50B24786745E6AFD3C115DC58E895 /* GDPickerCtrl.xib */,
+				08197028B46B6FB1EB92020FAC0B20FB /* GDUtils.h */,
+				8F1D2EDA8EB6D637E0E19EA0380050A4 /* GDUtils.m */,
+				CACB222ECC89ED3686D8DFFE89693BFB /* TipView.h */,
+				2574EECB1278E640D4D56C45A2E6DBBD /* TipView.m */,
+				09608ABA7CEB177D279E9C51411867CD /* gd_imgs */,
+				486A916E5F41C74F820FE3CE3112C931 /* Pod */,
+				A2227AE85FE0BB6B6B1B2F8D21F219C7 /* Support Files */,
 			);
 			name = GDPicker;
 			path = ../..;
 			sourceTree = "<group>";
 		};
-		8F5F3F7FF8FE22102158CD76AEE0632D /* GDPicker */ = {
+		54D0C45D1AB8CC24FAD4596D94E01EA8 /* Pods-GDPicker_Tests */ = {
 			isa = PBXGroup;
 			children = (
-				83EC983310DF10D198798166CB237088 /* Classes */,
+				1496B1A32065CFF53597023C35871E32 /* Pods-GDPicker_Tests.modulemap */,
+				6288A1F75007A71FE05252E234D1466F /* Pods-GDPicker_Tests-acknowledgements.markdown */,
+				38ED2A41F2FDD0080ADE1D51A4D44729 /* Pods-GDPicker_Tests-acknowledgements.plist */,
+				4DCA834A9A7E5E552F42D159B4CC34DA /* Pods-GDPicker_Tests-dummy.m */,
+				BB7E782B68C304C19C9E01910B410D47 /* Pods-GDPicker_Tests-Info.plist */,
+				FC65BA4BAA40E846C6A65E710D9A570F /* Pods-GDPicker_Tests-umbrella.h */,
+				C3CC77A2D65C26DF7C4B26C0DA28E336 /* Pods-GDPicker_Tests.debug.xcconfig */,
+				DC9FEB184A1048C5F52F4628EA912D39 /* Pods-GDPicker_Tests.release.xcconfig */,
 			);
-			name = GDPicker;
-			path = GDPicker;
+			name = "Pods-GDPicker_Tests";
+			path = "Target Support Files/Pods-GDPicker_Tests";
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		6F0C9F4A52B37CADD55A239E17FEA2BE /* Pods-GDPicker_Example */ = {
 			isa = PBXGroup;
 			children = (
-				7531C8F8DE19F1AA3C8A7AC97A91DC29 /* iOS */,
+				BE8F8E70E0342C6415B9BD64CAE62C8B /* Pods-GDPicker_Example.modulemap */,
+				41765BB7DFFD79CE892D9953B0B4F70D /* Pods-GDPicker_Example-acknowledgements.markdown */,
+				1FBBC14C1594A3976FAE9A3D75DE7FBB /* Pods-GDPicker_Example-acknowledgements.plist */,
+				14D43EC1D19F4DD42061AB7D2BA23089 /* Pods-GDPicker_Example-dummy.m */,
+				4031B89462889DBE31A936E68BA0177D /* Pods-GDPicker_Example-frameworks.sh */,
+				C1543F6D7B957E30BB33F359AFFDC901 /* Pods-GDPicker_Example-Info.plist */,
+				06697CE0251535D22D2C6D765057E0CD /* Pods-GDPicker_Example-umbrella.h */,
+				DFF6DA2E60764B1BABA5718DF53F05E4 /* Pods-GDPicker_Example.debug.xcconfig */,
+				1AB367AA045DED59A7EF9099D4104C14 /* Pods-GDPicker_Example.release.xcconfig */,
+			);
+			name = "Pods-GDPicker_Example";
+			path = "Target Support Files/Pods-GDPicker_Example";
+			sourceTree = "<group>";
+		};
+		9B055D0CFEA43187E72B03DED11F5662 /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				CB4607EFCA7C5F75397649E792E2AFCB /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		A2227AE85FE0BB6B6B1B2F8D21F219C7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7B128B641CAC5F676E229881449A460 /* GDPicker.modulemap */,
+				4E5F2CCA1A288D3FF70C72B81CB3F566 /* GDPicker.xcconfig */,
+				9A8DB130BC87808E674DBA88AF79CC74 /* GDPicker-dummy.m */,
+				A99310EE1A8D53B050D23B6FFCF7C137 /* GDPicker-Info.plist */,
+				A785C5B539824AF8B8A2642963EBD2DE /* GDPicker-prefix.pch */,
+				20ADDE04DE46D3DD2FA1F7DAF2C45C4F /* GDPicker-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/GDPicker";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				29967B6C55890D6771A7116DB1C3D501 /* Development Pods */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				4657BFE33687E663D85D934F099139AD /* Products */,
+				E5E31AEE98EE6A343AB4D41901FDC3DF /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B055D0CFEA43187E72B03DED11F5662 /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		CCF1008E19CF995C47BCDACB7373F11B /* gd_imgs */ = {
+		E5E31AEE98EE6A343AB4D41901FDC3DF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				677D988C91F8ED404A5657F286007B23 /* back@2x.png */,
-				5543F8DD072A20BD88F10C8C94F860BA /* back@3x.png */,
-				B423CF7161F8ECC2DA232E1A6B166F51 /* done2@2x.png */,
-				4924993BF3F57A4255A9666A023CCADC /* done2@3x_2.png */,
-				6E3E2C282D49C3871F4FB74847C92DB6 /* livemark@2x.png */,
-				AE94C58BC42B6C91CA977D9DD7F957F6 /* livemark@3x.png */,
-				937C3540AB3CA738078CFC519449D445 /* nofavor.png */,
-				F72EB7A0F904FCBBCDF6A033F37DDED9 /* nonet.png */,
-				7EC005AC3E6277F926C987E2A2DD52EC /* noresult.png */,
-				508C99A9600F197D2A19BB822CC0B19E /* quxiao@2x.png */,
-				5F96133F444C25FA94E2BEF0B514FE4F /* quxiao@3x.png */,
-			);
-			name = gd_imgs;
-			path = gd_imgs;
-			sourceTree = "<group>";
-		};
-		E2AFAF731F60DD37A1445C224A6544F3 /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				2671AFD2774FF77E6B6CF06AE1F5A28E /* Pods-GDPicker_Example */,
-				1AABE74D2A73B14FFB513F31CCB778DB /* Pods-GDPicker_Tests */,
+				6F0C9F4A52B37CADD55A239E17FEA2BE /* Pods-GDPicker_Example */,
+				54D0C45D1AB8CC24FAD4596D94E01EA8 /* Pods-GDPicker_Tests */,
 			);
 			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		E89EEDC9DB93F4D5FB8D2598CB0DF682 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				848AC9061BCBB5933FC0F726CB60EB5E /* GDPicker */,
-			);
-			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		A11575456862B32ED00DFEC4A587F3F8 /* Headers */ = {
+		100E3D7D8614CB7B987A51AF8C8682DD /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9D6FEDB17CF6A81946B61AC9AD12356D /* Pods-GDPicker_Example-umbrella.h in Headers */,
+				7904FA9845A16B863777E0CAEB612B68 /* GDPicker-umbrella.h in Headers */,
+				D3CEB4410D3CFD51C4D9EDC3BB4ECFBE /* GDPickerCell.h in Headers */,
+				25FAA01857FE2254383608CF57720CC3 /* GDPickerCtrl.h in Headers */,
+				A2E4232B80FBAD0A875A1A5D123F93C1 /* GDUtils.h in Headers */,
+				1174A27DEA642886CD4562B5286F8FB2 /* TipView.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A29EA278AC94624CDCEE76338F942BAD /* Headers */ = {
+		8BC6C163B672A2C09E45ED26CC68467F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B0E1C22A2AD9B710FBF898812CCBC804 /* Pods-GDPicker_Tests-umbrella.h in Headers */,
+				92370ABF6DDF9FE7C63226C2B8CD61C4 /* Pods-GDPicker_Example-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EF854D9879D591F46E060DE9D1D81D1D /* Headers */ = {
+		D06547F3C08A83F1E6BEFD1FBCF4739C /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8BF62B39ECBD55DF31F063224577FA57 /* GDPicker-umbrella.h in Headers */,
-				9A4642061DE9F7CA98C0C85CD9466272 /* GDPickerCell.h in Headers */,
-				C4A7FDC1DAAE783D05C64AF9B3038CBE /* GDPickerCtrl.h in Headers */,
-				14BE0D0D0718A3AD03C147417E284A73 /* GDUtils.h in Headers */,
-				AAA1D6DD5517C97F18DF6D800D237380 /* TipView.h in Headers */,
+				2C97D47B36CC09E57C9F05C152D3EC85 /* Pods-GDPicker_Tests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		60EE640937F403B0A4D8C64AD9D9D557 /* Pods-GDPicker_Tests */ = {
+		67A67AFEE88494E5F02CFC70CCACE3BA /* Pods-GDPicker_Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03C855E40D097A36EF2475A76F3214A5 /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Tests" */;
+			buildConfigurationList = 5763599E6E3A5567FDD3BC5D38A8AC65 /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Tests" */;
 			buildPhases = (
-				9465ECA4477EB86A24348D3264B514AD /* Sources */,
-				81C1238C22C9026325823CACE8CD6DD6 /* Frameworks */,
-				A29EA278AC94624CDCEE76338F942BAD /* Headers */,
+				D06547F3C08A83F1E6BEFD1FBCF4739C /* Headers */,
+				FEC54C5A453FE489B3B09C945184769D /* Sources */,
+				CC5F9C4AEC0446A00C6050BDF799B4DF /* Frameworks */,
+				A0E4079B65B0A8B92EC927D52ADF4CFA /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				66398DDD12F89A84900C8181C83AE66D /* PBXTargetDependency */,
 			);
 			name = "Pods-GDPicker_Tests";
 			productName = "Pods-GDPicker_Tests";
-			productReference = B56B4C8D5A1EAC622F519427056CAEF2 /* Pods_GDPicker_Tests.framework */;
+			productReference = 6551F8494D232BA0B6FEDE55DFF8BCB8 /* Pods_GDPicker_Tests.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		A6D172A15465E3026BB35B63BE40CC3A /* GDPicker */ = {
+		E9140E755382BC905C6BFC01E1AEEBAD /* GDPicker */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 47058B28AF0B582E2B75AA7BB0C0B1BD /* Build configuration list for PBXNativeTarget "GDPicker" */;
+			buildConfigurationList = 4A86556BF9C1DC1E53E320A185A6C98C /* Build configuration list for PBXNativeTarget "GDPicker" */;
 			buildPhases = (
-				EACC15290F8196D97C2A180B9EC97390 /* Sources */,
-				CCDC160A6F8E2EF3081C1D3F23C12C7C /* Frameworks */,
-				EF854D9879D591F46E060DE9D1D81D1D /* Headers */,
+				100E3D7D8614CB7B987A51AF8C8682DD /* Headers */,
+				E1F2BFCDB15327C64D65DED9330DC79A /* Sources */,
+				C33D5083266ED721E83F7B3D786BE160 /* Frameworks */,
+				B954993A22332495D9AB00DFB2C32D82 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -358,136 +358,166 @@
 			);
 			name = GDPicker;
 			productName = GDPicker;
-			productReference = A69E7ED32F6E75866B5297C1406422A6 /* GDPicker.framework */;
+			productReference = 9E1E1CC2A3093B3F8FEDA17CB059826B /* GDPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		AD13525C4A7C33B654361E0EB2845DD8 /* Pods-GDPicker_Example */ = {
+		E9F5C0926019D19FC2C2C7B0D787173C /* Pods-GDPicker_Example */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B6E2945441B769EC8DDE92A16AFCA4DD /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Example" */;
+			buildConfigurationList = 1F7CFC71068FF5A6B4143312DF43DAAB /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Example" */;
 			buildPhases = (
-				604341C3BBE9C5AA8D10372D3BE85FE5 /* Sources */,
-				69C6A7766860CE21926D741E19DCAA8B /* Frameworks */,
-				A11575456862B32ED00DFEC4A587F3F8 /* Headers */,
+				8BC6C163B672A2C09E45ED26CC68467F /* Headers */,
+				9225847E35F6D89F68A33AFF31BF055B /* Sources */,
+				61555E8D355E947B21A434EB6024AD00 /* Frameworks */,
+				CBB1122E7F0F49BC7661B5A1E17B0250 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				982F7C7893742D4BAB1FDD1117C4CBF0 /* PBXTargetDependency */,
+				CCFEF8F584BA7953B2645D0BAFF49C1E /* PBXTargetDependency */,
 			);
 			name = "Pods-GDPicker_Example";
 			productName = "Pods-GDPicker_Example";
-			productReference = 0E8B5F34DD533591E47C3292F840B336 /* Pods_GDPicker_Example.framework */;
+			productReference = 0CF94A33493A4E8B318CBF3E329505D5 /* Pods_GDPicker_Example.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0700;
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 1020;
 			};
-			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
-			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 2E81DDE9890CD5AF7135A8217317FE16 /* Products */;
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 4657BFE33687E663D85D934F099139AD /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A6D172A15465E3026BB35B63BE40CC3A /* GDPicker */,
-				AD13525C4A7C33B654361E0EB2845DD8 /* Pods-GDPicker_Example */,
-				60EE640937F403B0A4D8C64AD9D9D557 /* Pods-GDPicker_Tests */,
+				E9140E755382BC905C6BFC01E1AEEBAD /* GDPicker */,
+				E9F5C0926019D19FC2C2C7B0D787173C /* Pods-GDPicker_Example */,
+				67A67AFEE88494E5F02CFC70CCACE3BA /* Pods-GDPicker_Tests */,
 			);
 		};
 /* End PBXProject section */
 
+/* Begin PBXResourcesBuildPhase section */
+		A0E4079B65B0A8B92EC927D52ADF4CFA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B954993A22332495D9AB00DFB2C32D82 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CBB1122E7F0F49BC7661B5A1E17B0250 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		604341C3BBE9C5AA8D10372D3BE85FE5 /* Sources */ = {
+		9225847E35F6D89F68A33AFF31BF055B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5AF8A7D25C223F4A456AB7A52629719F /* Pods-GDPicker_Example-dummy.m in Sources */,
+				D65DD0EA72370F751CCF2D772CE9B66D /* Pods-GDPicker_Example-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9465ECA4477EB86A24348D3264B514AD /* Sources */ = {
+		E1F2BFCDB15327C64D65DED9330DC79A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74EAD33EEDAC2DCB20E706020A05B38B /* Pods-GDPicker_Tests-dummy.m in Sources */,
+				02601792BA190E9F6335E51BB21DD2B0 /* back@2x.png in Sources */,
+				E5510C7A675C644385214A1CFD64267F /* back@3x.png in Sources */,
+				54E49F31BECF4CA14F5F50ECFE9DC992 /* done2@2x.png in Sources */,
+				25F84E175086612D0C5807A4AA2F5037 /* done2@3x_2.png in Sources */,
+				D09692619F8CAC97A820D10018CB6EBC /* GDPicker-dummy.m in Sources */,
+				D5779675B1753FBD5ABE9705062B06D8 /* GDPickerCell.m in Sources */,
+				D766025E1E4FF8CFB8AB70F30FBC58AC /* GDPickerCell.xib in Sources */,
+				3DD14A7FFACBE776BB81208BCFB599B9 /* GDPickerCtrl.m in Sources */,
+				B99D0C66C5FE137ACA126D6ED008FDA3 /* GDPickerCtrl.xib in Sources */,
+				7E6A7BDE67D8970B6CEE5A72765C891B /* GDUtils.m in Sources */,
+				315276F3181092D5591FE7390A952198 /* livemark@2x.png in Sources */,
+				230E64B526FB140AF4C0BDAAEAA0C66A /* livemark@3x.png in Sources */,
+				FA3034B7228FF1FCD222BA64DFF74847 /* nofavor.png in Sources */,
+				17F6C98D99C809D09CC7C9D9F933C17C /* nonet.png in Sources */,
+				C636CBAAB483800F5DFE2515E57B59DE /* noresult.png in Sources */,
+				B23E6BF3D689F69C266532EC8DDE0041 /* quxiao@2x.png in Sources */,
+				9049C4F4D1CAD1B59DC20CB16101903F /* quxiao@3x.png in Sources */,
+				9D5F9B9C202508A7C74168EEE111A3FC /* TipView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EACC15290F8196D97C2A180B9EC97390 /* Sources */ = {
+		FEC54C5A453FE489B3B09C945184769D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1A714DCB69E1A756568EBC7912D2DA94 /* back@2x.png in Sources */,
-				C569807B7FBC61E1C10D1D7848285F7A /* back@3x.png in Sources */,
-				27590DBD9871F07E9B753FC5B83AE6BB /* done2@2x.png in Sources */,
-				E5A17FAC1694E421A95EE1CFDAA194C3 /* done2@3x_2.png in Sources */,
-				C53CB006AF35E668A877D4EC5EA9D816 /* GDPicker-dummy.m in Sources */,
-				E4EEBDEB068159844A08324F9666AB2C /* GDPickerCell.m in Sources */,
-				CF5EFEDA71CA21A29CF1EB6CD7BE1FB4 /* GDPickerCell.xib in Sources */,
-				E38FAC2AD6BDA5297122D35C1702D61F /* GDPickerCtrl.m in Sources */,
-				B50D3073AB77D3575967252D730E493E /* GDPickerCtrl.xib in Sources */,
-				6D50F0962F73E95AF874FD7B4013EFEF /* GDUtils.m in Sources */,
-				AF6DF0F2C70C7DD6B2A2740DAA05D5D3 /* livemark@2x.png in Sources */,
-				6131CC3F70C1279D1B7AA30C81A2B705 /* livemark@3x.png in Sources */,
-				869536F914A877176F84E91054A77E94 /* nofavor.png in Sources */,
-				5A704187A7E7287225741FA3D314B613 /* nonet.png in Sources */,
-				E4B2BD8BF7D414DC5F1EDABC6E54D108 /* noresult.png in Sources */,
-				140A2280D387C625927D1955E20A8CE5 /* quxiao@2x.png in Sources */,
-				D5549C32513D4013682DAF8BA23EF9A7 /* quxiao@3x.png in Sources */,
-				5CB3A851658EE60F267ACCD4DABE7268 /* TipView.m in Sources */,
+				3A4A97B372495310B54DDFFE6773F658 /* Pods-GDPicker_Tests-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		982F7C7893742D4BAB1FDD1117C4CBF0 /* PBXTargetDependency */ = {
+		66398DDD12F89A84900C8181C83AE66D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-GDPicker_Example";
+			target = E9F5C0926019D19FC2C2C7B0D787173C /* Pods-GDPicker_Example */;
+			targetProxy = 4A67AF64B27ACA72879D982E3552D5F4 /* PBXContainerItemProxy */;
+		};
+		CCFEF8F584BA7953B2645D0BAFF49C1E /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GDPicker;
-			target = A6D172A15465E3026BB35B63BE40CC3A /* GDPicker */;
-			targetProxy = 3C319E9FD9614B277BFAA7D2C6B2B571 /* PBXContainerItemProxy */;
+			target = E9140E755382BC905C6BFC01E1AEEBAD /* GDPicker */;
+			targetProxy = 39A06EC5118B3065968BC0ABF49A2C9B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0A3CDA15C717D931776DB7EC62857943 /* Debug */ = {
+		462639CADB6EE1F00A262304C4D0F90F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F451787F1A8B2DE846CD3AB99E130DC0 /* Pods-GDPicker_Example.debug.xcconfig */;
+			baseConfigurationReference = DFF6DA2E60764B1BABA5718DF53F05E4 /* Pods-GDPicker_Example.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
 				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Example/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GDPicker_Example;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -496,297 +526,333 @@
 			};
 			name = Debug;
 		};
-		13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */ = {
+		47817EDEFB4A6B5BDAC4E0E083BFBD83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5F2CCA1A288D3FF70C72B81CB3F566 /* GDPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GDPicker/GDPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GDPicker/GDPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GDPicker/GDPicker.modulemap";
+				PRODUCT_MODULE_NAME = GDPicker;
+				PRODUCT_NAME = GDPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		4BFDA2A8F2A0C5710EEF129E3B0C9F47 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DC9FEB184A1048C5F52F4628EA912D39 /* Pods-GDPicker_Tests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		703343BCAD26ABD35AFAAD8010B034FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3CC77A2D65C26DF7C4B26C0DA28E336 /* Pods-GDPicker_Tests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		846FBBFA55AE584C8F8C1A3A54FB57A4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E5F2CCA1A288D3FF70C72B81CB3F566 /* GDPicker.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/GDPicker/GDPicker-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/GDPicker/GDPicker-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/GDPicker/GDPicker.modulemap";
+				PRODUCT_MODULE_NAME = GDPicker;
+				PRODUCT_NAME = GDPicker;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8A56A18ABE3F0F067A6D7AB3E1153A7A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AB367AA045DED59A7EF9099D4104C14 /* Pods-GDPicker_Example.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
 				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_DEBUG=1",
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		6BDCB7D7A792164878A08F08E264DE22 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = E658EFE58F69720842013F9FB7A6D484 /* Pods-GDPicker_Example.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Example/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GDPicker_Example;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */ = {
+		F232B5ECA11A71BFA199A229B323F454 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"POD_CONFIGURATION_RELEASE=1",
 					"$(inherited)",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
 				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
-		};
-		97186D0C931D2DAF834F35FF4FC04D40 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 71200633975171D645559B2E6626DF45 /* Pods-GDPicker_Tests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GDPicker_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		A8C1A828FC0E872B5174C6BDF6E49D6E /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D712BA369CB3761F1F45D47E944AB5A /* GDPicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GDPicker/GDPicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GDPicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GDPicker/GDPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = GDPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		AB5F8F55B4441105AFA9D045FC7537EF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 97B93748467DB58B3F3F021695F5C9E3 /* Pods-GDPicker_Tests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-GDPicker_Tests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-GDPicker_Tests/Pods-GDPicker_Tests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_GDPicker_Tests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		ECD42EF38B7E013240CD6BC0AC899834 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8D712BA369CB3761F1F45D47E944AB5A /* GDPicker.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/GDPicker/GDPicker-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/GDPicker/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/GDPicker/GDPicker.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = GDPicker;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03C855E40D097A36EF2475A76F3214A5 /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Tests" */ = {
+		1F7CFC71068FF5A6B4143312DF43DAAB /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Example" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				97186D0C931D2DAF834F35FF4FC04D40 /* Debug */,
-				AB5F8F55B4441105AFA9D045FC7537EF /* Release */,
+				462639CADB6EE1F00A262304C4D0F90F /* Debug */,
+				8A56A18ABE3F0F067A6D7AB3E1153A7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				13E96A645A77DAD1FD4F541F18F5DDBF /* Debug */,
-				862AF3139CD84E18D34FAF2F43CD0DA6 /* Release */,
+				AB4D69770D8ACE3A05E80BB3502666F6 /* Debug */,
+				F232B5ECA11A71BFA199A229B323F454 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		47058B28AF0B582E2B75AA7BB0C0B1BD /* Build configuration list for PBXNativeTarget "GDPicker" */ = {
+		4A86556BF9C1DC1E53E320A185A6C98C /* Build configuration list for PBXNativeTarget "GDPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				ECD42EF38B7E013240CD6BC0AC899834 /* Debug */,
-				A8C1A828FC0E872B5174C6BDF6E49D6E /* Release */,
+				846FBBFA55AE584C8F8C1A3A54FB57A4 /* Debug */,
+				47817EDEFB4A6B5BDAC4E0E083BFBD83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B6E2945441B769EC8DDE92A16AFCA4DD /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Example" */ = {
+		5763599E6E3A5567FDD3BC5D38A8AC65 /* Build configuration list for PBXNativeTarget "Pods-GDPicker_Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0A3CDA15C717D931776DB7EC62857943 /* Debug */,
-				6BDCB7D7A792164878A08F08E264DE22 /* Release */,
+				703343BCAD26ABD35AFAAD8010B034FC /* Debug */,
+				4BFDA2A8F2A0C5710EEF129E3B0C9F47 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 }

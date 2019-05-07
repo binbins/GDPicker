@@ -91,10 +91,11 @@
 
 - (void)reloadCollection:(NSArray *)imgs {
     
+    __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.resultArray removeAllObjects];
         [self.resultArray addObjectsFromArray:imgs];
-        [_resultCollection reloadData];
+        [weakSelf.resultCollection reloadData];
     });
 }
 
