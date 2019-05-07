@@ -82,7 +82,7 @@
 		6551F8494D232BA0B6FEDE55DFF8BCB8 /* Pods_GDPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GDPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		68546E59FD64031D480C24A9DB986F51 /* back@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "back@2x.png"; sourceTree = "<group>"; };
 		695021A6FE56EB966C4FC65C5CE537C7 /* livemark@2x.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = "livemark@2x.png"; sourceTree = "<group>"; };
-		75467E65756CFBA50E31FA78C728CA63 /* GDPicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GDPicker.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		75467E65756CFBA50E31FA78C728CA63 /* GDPicker.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = GDPicker.podspec; sourceTree = "<group>"; tabWidth = 2; };
 		889B8E45BF8DFB54BA3000DFD5C2B4F8 /* nonet.png */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = image.png; path = nonet.png; sourceTree = "<group>"; };
 		8F1D2EDA8EB6D637E0E19EA0380050A4 /* GDUtils.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDUtils.m; path = GDPicker/Classes/GDUtils.m; sourceTree = "<group>"; };
 		95B77446BD4A6A93EF922EF54024B0AE /* GDPickerCell.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = GDPickerCell.m; path = GDPicker/Classes/GDPickerCell.m; sourceTree = "<group>"; };

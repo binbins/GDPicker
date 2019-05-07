@@ -17,6 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIView *selectedView;
 @property (weak, nonatomic) IBOutlet UILabel *markOrder;
 @property (weak, nonatomic) IBOutlet UIImageView *duihao;
+@property (weak, nonatomic) IBOutlet UIView *icloudView;
 
 @end
 
@@ -54,6 +55,18 @@
 
 #pragma mark - 非公开
 - (void)initCoverImg:(PHAsset *)asset {
+    PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+    option.networkAccessAllowed = NO;
+    option.synchronous = YES;
+
+    __block BOOL isInLocalAblum = YES;
+    
+    __weak typeof(self) weakSelf = self;
+    [[PHCachingImageManager defaultManager] requestImageDataForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+        isInLocalAblum = imageData ? YES : NO;
+        weakSelf.icloudView.hidden = isInLocalAblum;
+    }];
+    
     
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
     options.resizeMode   = PHImageRequestOptionsResizeModeExact;
@@ -61,12 +74,14 @@
     options.synchronous = YES;
     options.networkAccessAllowed = YES;
     
+//    BOOL isInCloud = asset.sourceType == PHAssetSourceTypeCloudShared;
+    
     CGSize size = [GDUtils sizeMaxWidth:150.f withAsset:asset];
-    __weak typeof(self) weakSelf = self;
     [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.coverImg setImage:result];
+            
         });
     }];
 }

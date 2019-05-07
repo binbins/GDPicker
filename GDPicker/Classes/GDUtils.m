@@ -30,6 +30,7 @@
     requestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     requestOptions.synchronous = YES;
+    requestOptions.networkAccessAllowed = YES;
 
     NSMutableArray *resultImgs = [NSMutableArray array];
     NSUInteger imgCount = phassetArr.count;
@@ -79,11 +80,11 @@
     requestOptions.resizeMode = PHImageRequestOptionsResizeModeExact;
     requestOptions.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     requestOptions.synchronous = YES;
+    requestOptions.networkAccessAllowed = YES;
     
     dispatch_group_t group = dispatch_group_create();
     NSConditionLock *lock = [[NSConditionLock alloc] initWithCondition:0];
     dispatch_queue_t queue = dispatch_queue_create("queue", DISPATCH_QUEUE_CONCURRENT);
-//    NSLock *threadLock = [[NSLock alloc] init];
     for (int i = 0; i<burstCount; i++) {
         PHAsset *each = [fetchResult objectAtIndex:i];
         CGSize targetSize = [GDUtils sizeMaxWidth:300.0f withAsset:each];//尺寸大容易崩溃
@@ -91,14 +92,13 @@
         
         [[PHImageManager defaultManager] requestImageForAsset:each targetSize:targetSize contentMode:PHImageContentModeDefault options:requestOptions resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
             dispatch_async(queue, ^{
-                NSLog(@"得到结果:%d", i);
+//                NSLog(@"得到结果:%d", i);
                 
                 [lock lockWhenCondition:i];
                 if (result) {
                     [resultImgs addObject:result];
-                    NSLog(@"使用结果:%d", i);
+//                    NSLog(@"使用结果:%d", i);
                 }
-                //            NSLog(@"phasset 转 图片---%@", index);
                 dispatch_group_leave(group);
                 [lock unlockWithCondition:i+1];
             });

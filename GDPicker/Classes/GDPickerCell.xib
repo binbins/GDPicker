@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -33,13 +33,13 @@
                         <rect key="frame" x="0.0" y="219" width="274" height="23"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQg-ni-l71">
-                                <rect key="frame" x="239.5" y="4" width="29.5" height="14.5"/>
+                                <rect key="frame" x="239.5" y="4.5" width="29.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000张" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SBu-9K-l5q">
-                                <rect key="frame" x="5" y="4" width="35" height="14.5"/>
+                                <rect key="frame" x="5" y="4.5" width="35" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -77,6 +77,22 @@
                             <constraint firstAttribute="height" constant="20" id="hke-b2-bhu"/>
                         </constraints>
                     </imageView>
+                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44n-7T-Mma" userLabel="icloudView">
+                        <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-OG-CDf">
+                                <rect key="frame" x="195" y="191" width="49" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="BpI-OG-CDf" secondAttribute="bottom" constant="30" id="Bfs-zf-HFJ"/>
+                            <constraint firstAttribute="trailing" secondItem="BpI-OG-CDf" secondAttribute="trailing" constant="30" id="zlH-lQ-o9l"/>
+                        </constraints>
+                    </view>
                 </subviews>
             </view>
             <constraints>
@@ -84,8 +100,11 @@
                 <constraint firstItem="tw4-15-g6H" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="1Jf-dC-DuT"/>
                 <constraint firstAttribute="trailing" secondItem="ZYA-fw-Jf0" secondAttribute="trailing" id="39X-Hc-B7G"/>
                 <constraint firstItem="ZYA-fw-Jf0" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="3gF-H1-sWZ"/>
+                <constraint firstItem="44n-7T-Mma" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="5n8-QP-BUp"/>
                 <constraint firstItem="iiD-aG-vxj" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="6aO-oI-V7x"/>
                 <constraint firstAttribute="bottom" secondItem="tw4-15-g6H" secondAttribute="bottom" id="71B-hF-RQ6"/>
+                <constraint firstAttribute="bottom" secondItem="44n-7T-Mma" secondAttribute="bottom" id="Acz-fa-Bn2"/>
+                <constraint firstAttribute="trailing" secondItem="44n-7T-Mma" secondAttribute="trailing" id="BMv-cI-lnP"/>
                 <constraint firstItem="ZYA-fw-Jf0" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="EFs-Am-IzD"/>
                 <constraint firstAttribute="trailing" secondItem="y3B-5y-GNb" secondAttribute="trailing" constant="5" id="Ggo-yo-mat"/>
                 <constraint firstItem="y3B-5y-GNb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="O1E-IW-X66"/>
@@ -93,6 +112,7 @@
                 <constraint firstAttribute="bottom" secondItem="ZYA-fw-Jf0" secondAttribute="bottom" id="SfJ-iW-m7h"/>
                 <constraint firstItem="lJy-Bn-Tkx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="5" id="Xe3-f5-ey5"/>
                 <constraint firstAttribute="trailing" secondItem="iiD-aG-vxj" secondAttribute="trailing" id="YkE-eF-L2q"/>
+                <constraint firstItem="44n-7T-Mma" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="auU-Ec-NQq"/>
                 <constraint firstItem="lJy-Bn-Tkx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="5" id="oLK-v0-fh2"/>
                 <constraint firstAttribute="trailing" secondItem="tw4-15-g6H" secondAttribute="trailing" id="s6H-uc-aKR"/>
             </constraints>
@@ -101,6 +121,7 @@
                 <outlet property="burstCountLabel" destination="SBu-9K-l5q" id="m2p-wP-AAs"/>
                 <outlet property="coverImg" destination="iiD-aG-vxj" id="ufS-t2-FFm"/>
                 <outlet property="duihao" destination="y3B-5y-GNb" id="DQe-9t-xp8"/>
+                <outlet property="icloudView" destination="44n-7T-Mma" id="lj9-Ve-PN0"/>
                 <outlet property="liveMark" destination="lJy-Bn-Tkx" id="88v-MF-Mlq"/>
                 <outlet property="markOrder" destination="DyS-Y6-sJ8" id="5LR-KH-4RS"/>
                 <outlet property="selectedView" destination="ZYA-fw-Jf0" id="jcS-7g-Mr0"/>
@@ -111,7 +132,7 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="done2.png" width="20" height="20"/>
+        <image name="done2.png" width="20.5" height="20.5"/>
         <image name="livemark.png" width="56" height="56"/>
     </resources>
 </document>
