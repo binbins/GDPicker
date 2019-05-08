@@ -38,7 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		01760F46634F2788064A8C43 /* GDPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GDPicker.podspec; path = ../GDPicker.podspec; sourceTree = "<group>"; };
+		01760F46634F2788064A8C43 /* GDPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = GDPicker.podspec; path = ../GDPicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		07FF1C9C1FB87F53007D6FFA /* ResultCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ResultCell.h; sourceTree = "<group>"; };
 		07FF1C9D1FB87F53007D6FFA /* ResultCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ResultCell.m; sourceTree = "<group>"; };
 		13744EC1B7C380D7F2AA6C4A /* Pods-GDPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GDPicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-GDPicker_Example/Pods-GDPicker_Example.release.xcconfig"; sourceTree = "<group>"; };

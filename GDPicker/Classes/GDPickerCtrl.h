@@ -5,6 +5,7 @@
 //  Created by 张帆 on 2017/11/12.
 //
 
+
 #import <UIKit/UIKit.h>
 @import Photos;
 
@@ -26,5 +27,10 @@ typedef NS_ENUM(NSInteger, PickerType)
 - (void)showIn:(UIViewController *)ctrl;
 
 - (void)dismiss;
+
+
+
+
+
 
 @end

@@ -5,9 +5,8 @@
 //  Created by 张帆 on 2017/11/12.
 //
 #define MAX_SELECTED_IMG_NUM 10
-#define GDSCR_W [[UIScreen mainScreen] bounds].size.width
-#define GDSCR_H [[UIScreen mainScreen] bounds].size.height
 
+#import "CustomNavigationView.h"
 #import "GDPickerCtrl.h"
 #import "GDPickerCell.h"
 #import "TipView.h"
@@ -17,10 +16,8 @@ typedef void (^DoneBlock)(NSArray *arr);
 
 @interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, TipViewDelegate>
 
-@property (unsafe_unretained, nonatomic) IBOutlet UICollectionView *pickerCollection;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *nextBtn;
-@property (unsafe_unretained, nonatomic) IBOutlet UIButton *cancelBtn;
-@property (unsafe_unretained, nonatomic) IBOutlet UILabel *pickName;
+@property (nonatomic, strong) CustomNavigationView *customNaview;
+@property (strong, nonatomic) UICollectionView *pickerCollection;
 @property (nonatomic, strong) TipView *tipsView;
 @property (nonatomic, strong) DoneBlock doneBlock;
 @property (nonatomic, strong) NSMutableArray *pickerModels, *selectedIndexs;
@@ -55,9 +52,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 #pragma mark - 公开
 - (instancetype)initWithPickerType:(PickerType)typeType CompleteBlock:(void(^)(NSArray<PHAsset *> *resultArr))completeBlock {
     
-    NSString *nibName = NSStringFromClass([GDPickerCtrl class]);
-    NSBundle *pickerBundle = [NSBundle bundleForClass:[GDPickerCtrl class]];
-    if (self = [super initWithNibName:nibName bundle:pickerBundle]) {
+    if (self = [super init]) {
         self.pickerType = typeType;
     }
     if (completeBlock) {
@@ -83,9 +78,9 @@ typedef void (^DoneBlock)(NSArray *arr);
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self initNavBar];
     [self initSpecificTypePicker];
     [self initPickerCollection];
-//    [self initPickerData];
     [self initNewPickerData];
     [self initTipView];
 }
@@ -109,36 +104,55 @@ typedef void (^DoneBlock)(NSArray *arr);
     }
 }
 
+- (void)initNavBar {
+    self.navigationController.navigationBar.hidden = YES;
+    _customNaview = [[CustomNavigationView alloc] initWithFrame:CGRectMake(0, 0, GDSCR_W, GDNavigationBarHeight)];
+    [_customNaview.rightTitleBtn setTitle:@"下一步" forState:UIControlStateNormal];
+    [self.view addSubview:_customNaview];
+    
+    __weak typeof(self) weakSelf = self;
+    _customNaview.handleBackBlock = ^{
+        [weakSelf backBtnClicked:nil];
+    };
+    
+    _customNaview.handleRightTitleBlock = ^{
+        [weakSelf nextBtnClicked:nil];
+    };
+}
+
 - (void)initSpecificTypePicker {
     _isSingleSelected = !(_pickerType==PickerTypeManyPhoto);
     
-    _nextBtn.hidden = _isSingleSelected;    //单选picker没有下一步btn
+    _customNaview.rightTitleBtn.hidden = _isSingleSelected;    //单选picker没有下一步btn
     
     if (_pickerType == PickerTypeManyPhoto) {
-        _pickName.text = @"选择多张照片";
+        _customNaview.titleLab.text = @"选择多张照片";
         _isPhotosPicker = YES;
-        _nextBtn.enabled = NO;
-        _nextBtn.alpha = 0.4;
+        _customNaview.rightTitleBtn.enabled = NO;
+        _customNaview.rightTitleBtn.alpha = 0.4;
     }else if (_pickerType == PickerTypeSinglePhoto){
-        _pickName.text = @"选择照片";
+        _customNaview.titleLab.text = @"选择照片";
         _isPhotosPicker = YES;
     }else if (_pickerType == PickerTypeBurst){
-        _pickName.text = @"选择连拍";
+        _customNaview.titleLab.text = @"选择连拍";
         _isBurstPicker = YES;
     }else if (_pickerType == PickerTypeVideo){
-        _pickName.text = @"选择视频";
+        _customNaview.titleLab.text = @"选择视频";
         _isVideoPicker = YES;
     }else if (_pickerType == PickerTypeLivephoto){
-        _pickName.text = @"选择Livephoto";
+        _customNaview.titleLab.text = @"选择Livephoto";
         _isLivePhotoPicker = YES;
     }
     else if (_pickerType == PickerTypeGif){
-        _pickName.text = @"选择GIF";
+        _customNaview.titleLab.text = @"选择GIF";
         _isGifPicker = YES;
     }
 }
 
 - (void)initPickerCollection {
+    UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
+    _pickerCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, GDNavigationBarHeight, GDSCR_W, GDSCR_H-GDNavigationBarHeight) collectionViewLayout:layout];
+    [self.view addSubview:_pickerCollection];
     _pickerCollection.delegate = self;
     _pickerCollection.dataSource = self;
     
@@ -167,7 +181,7 @@ typedef void (^DoneBlock)(NSArray *arr);
     PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
     
     [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull collection, NSUInteger idx, BOOL *stop) {
-        NSLog(@"相簿名:%@ id:%ld", collection.localizedTitle, collection.assetCollectionSubtype);
+//        NSLog(@"相簿名:%@ id:%ld", collection.localizedTitle, collection.assetCollectionSubtype);
         NSInteger typeId = collection.assetCollectionSubtype;
         if (weakSelf.isPhotosPicker && typeId==PHAssetCollectionSubtypeSmartAlbumUserLibrary ) {
             
@@ -193,7 +207,7 @@ typedef void (^DoneBlock)(NSArray *arr);
     }];
     
     //题目
-    _pickName.text = [_pickName.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
+    _customNaview.titleLab.text = [_customNaview.titleLab.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
     
 }
 
@@ -208,53 +222,9 @@ typedef void (^DoneBlock)(NSArray *arr);
     
 }
 
-/*
-- (void)enumerateAssetsInAssetCollection:(PHAssetCollection *)assetCollection original:(BOOL)original{
-    
-    PHFetchOptions *fetchOption = [[PHFetchOptions alloc] init];
-    fetchOption.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
-    
-    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:fetchOption];
-    for (PHAsset *asset in assets) {
-        BOOL isLivePhoto, isVideo, isBurst, isPhoto;
-        BOOL isNotLivePhoto;
-        
-        if (@available(iOS 9.1, *)){
-            isLivePhoto = (asset.mediaSubtypes == PHAssetMediaSubtypePhotoLive);    //livephot 属于 照片细分type
-            isNotLivePhoto = (asset.mediaSubtypes != PHAssetMediaSubtypePhotoLive);
-        }else {
-            isLivePhoto = NO;
-            isNotLivePhoto = YES;
-        }
-        isBurst = asset.representsBurst;
-        isVideo = (asset.mediaType == PHAssetMediaTypeVideo);
-        isPhoto = (asset.mediaType == PHAssetMediaTypeImage) && isNotLivePhoto;
-        
-        //按条件添加
-        if (isLivePhoto && _isLivePhotoPicker) {
-            [self.pickerModels addObject:asset];
-            continue;
-        }
-        if (isVideo && _isVideoPicker) {
-            [self.pickerModels addObject:asset];
-            continue;
-        }
-        if (isBurst && _isBurstPicker) {
-            [self.pickerModels addObject:asset];
-            continue;
-        }
-        if (isPhoto && _isPhotosPicker) {
-            [self.pickerModels addObject:asset];
-            continue;
-        }
-    }
-}
-
-*/
-
 #pragma mark - out let
 
-- (IBAction)nextBtnClicked:(id)sender {
+- (void)nextBtnClicked:(id)sender {
 
     NSMutableArray *selectedAssets = [NSMutableArray array];
     for (NSIndexPath *index in self.selectedIndexs) {
@@ -265,7 +235,7 @@ typedef void (^DoneBlock)(NSArray *arr);
     [self dismiss];
 }
 
-- (IBAction)backBtnClicked:(id)sender {
+- (void)backBtnClicked:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -353,8 +323,8 @@ typedef void (^DoneBlock)(NSArray *arr);
     
     [self refreshSpecificCell];
     
-    _nextBtn.enabled = _selectedIndexs.count>0; //下一步按钮的enable
-    _nextBtn.alpha = _selectedIndexs.count>0? 1.0f : 0.4f;
+    _customNaview.rightTitleBtn.enabled = _selectedIndexs.count>0; //下一步按钮的enable
+    _customNaview.rightTitleBtn.alpha = _selectedIndexs.count>0? 1.0f : 0.4f;
 }
 
 - (NSUInteger)imgIndexAtSelectedArray:(NSIndexPath *)path {
@@ -391,3 +361,49 @@ typedef void (^DoneBlock)(NSArray *arr);
 }
 
 @end
+
+
+
+
+/*
+- (void)enumerateAssetsInAssetCollection:(PHAssetCollection *)assetCollection original:(BOOL)original{
+    
+    PHFetchOptions *fetchOption = [[PHFetchOptions alloc] init];
+    fetchOption.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+    
+    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:assetCollection options:fetchOption];
+    for (PHAsset *asset in assets) {
+        BOOL isLivePhoto, isVideo, isBurst, isPhoto;
+        BOOL isNotLivePhoto;
+        
+        if (@available(iOS 9.1, *)){
+            isLivePhoto = (asset.mediaSubtypes == PHAssetMediaSubtypePhotoLive);    //livephot 属于 照片细分type
+            isNotLivePhoto = (asset.mediaSubtypes != PHAssetMediaSubtypePhotoLive);
+        }else {
+            isLivePhoto = NO;
+            isNotLivePhoto = YES;
+        }
+        isBurst = asset.representsBurst;
+        isVideo = (asset.mediaType == PHAssetMediaTypeVideo);
+        isPhoto = (asset.mediaType == PHAssetMediaTypeImage) && isNotLivePhoto;
+        
+        //按条件添加
+        if (isLivePhoto && _isLivePhotoPicker) {
+            [self.pickerModels addObject:asset];
+            continue;
+        }
+        if (isVideo && _isVideoPicker) {
+            [self.pickerModels addObject:asset];
+            continue;
+        }
+        if (isBurst && _isBurstPicker) {
+            [self.pickerModels addObject:asset];
+            continue;
+        }
+        if (isPhoto && _isPhotosPicker) {
+            [self.pickerModels addObject:asset];
+            continue;
+        }
+    }
+}
+*/

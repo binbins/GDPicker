@@ -15,6 +15,7 @@
 #import <GDPicker/GDPickerCtrl.h>
 #import <GDPicker/GDUtils.h>
 
+
 @interface GDViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *resultCollection;
 @property (nonatomic, strong) NSMutableArray *resultArray;
@@ -80,10 +81,10 @@
                 [weakSelf reloadCollection:images];
             }];
         }else {
-            NSLog(@"转化为图片中...");
+//            NSLog(@"转化为图片中...");
             
             [GDUtils imgsWithPhassetArr:resultArr completion:^(NSMutableArray *images) {
-                NSLog(@"转化图片结束");
+//                NSLog(@"转化图片结束");
                 [weakSelf reloadCollection:images];
             }];
         }

@@ -18,5 +18,10 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "GDPicker/Classes/**/*"
+  "source_files": "GDPicker/Classes/**/*",
+  "resource_bundles": {
+    "GDPicker": [
+      "GDPicker/Assets/*.png"
+    ]
+  }
 }
