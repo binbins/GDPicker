@@ -165,31 +165,35 @@ typedef void (^DoneBlock)(NSArray *arr);
     [self.pickerModels removeAllObjects];
     
     PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    
     [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull collection, NSUInteger idx, BOOL *stop) {
-        //        NSLog(@"相簿名:%@", assetCollection.localizedTitle);
-        NSString *aName = collection.localizedTitle;
-        if ([aName isEqualToString:@"All Photos"] && weakSelf.isPhotosPicker) {
+        NSLog(@"相簿名:%@ id:%ld", collection.localizedTitle, collection.assetCollectionSubtype);
+        NSInteger typeId = collection.assetCollectionSubtype;
+        if (weakSelf.isPhotosPicker && typeId==PHAssetCollectionSubtypeSmartAlbumUserLibrary ) {
             
             [weakSelf enumerateAssestCollection:collection];
         }
-        else if ([aName isEqualToString:@"Videos"] && weakSelf.isVideoPicker) {
+        else if ((typeId==PHAssetCollectionSubtypeSmartAlbumVideos || typeId==PHAssetCollectionSubtypeSmartAlbumSlomoVideos) && weakSelf.isVideoPicker) {
             
             [weakSelf enumerateAssestCollection:collection];
         }
-        else if ([aName isEqualToString:@"Bursts"] && weakSelf.isBurstPicker) {
+        else if (typeId==PHAssetCollectionSubtypeSmartAlbumBursts && weakSelf.isBurstPicker) {
             
             [weakSelf enumerateAssestCollection:collection];
         }
-        else if ([aName isEqualToString:@"Live Photos"] && weakSelf.isLivePhotoPicker) {
+        else if (typeId==213 && weakSelf.isLivePhotoPicker) {
             
             [weakSelf enumerateAssestCollection:collection];
         }
-        else if ([aName isEqualToString:@"Animated"] && weakSelf.isGifPicker) {
+        else if (typeId==214 && weakSelf.isGifPicker) {
             
             [weakSelf enumerateAssestCollection:collection];
         }
         
     }];
+    
+    //题目
+    _pickName.text = [_pickName.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
     
 }
 
@@ -202,8 +206,6 @@ typedef void (^DoneBlock)(NSArray *arr);
         [self.pickerModels addObject:a];
     }
     
-    //题目
-    _pickName.text = [_pickName.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
 }
 
 /*
