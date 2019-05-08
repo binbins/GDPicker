@@ -25,7 +25,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface CustomNavigationView : UIView
+@interface GDNavView : UIView
 
 @property (strong, nonatomic) UIImageView *bgImg;
 @property (strong, nonatomic) UIView *cusNavView;

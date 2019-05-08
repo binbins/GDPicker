@@ -6,9 +6,9 @@
 //  Copyright © 2017年 lefen58.com. All rights reserved.
 //
 
-#import "CustomNavigationView.h"
+#import "GDNavView.h"
 
-@implementation CustomNavigationView
+@implementation GDNavView
 
 #pragma mark -- init
 - (instancetype)initWithFrame:(CGRect)frame

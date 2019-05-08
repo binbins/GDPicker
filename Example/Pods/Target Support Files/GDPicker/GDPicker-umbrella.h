@@ -10,7 +10,7 @@
 #endif
 #endif
 
-#import "CustomNavigationView.h"
+#import "GDNavView.h"
 #import "GDPickerCell.h"
 #import "GDPickerCtrl.h"
 #import "GDUtils.h"

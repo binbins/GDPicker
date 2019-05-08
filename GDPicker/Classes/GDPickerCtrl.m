@@ -6,17 +6,17 @@
 //
 #define MAX_SELECTED_IMG_NUM 10
 
-#import "CustomNavigationView.h"
 #import "GDPickerCtrl.h"
+#import "GDNavView.h"
 #import "GDPickerCell.h"
-#import "TipView.h"
 #import "GDUtils.h"
+#import "TipView.h"
 
 typedef void (^DoneBlock)(NSArray *arr);
 
 @interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, TipViewDelegate>
 
-@property (nonatomic, strong) CustomNavigationView *customNaview;
+@property (nonatomic, strong) GDNavView *customNaview;
 @property (strong, nonatomic) UICollectionView *pickerCollection;
 @property (nonatomic, strong) TipView *tipsView;
 @property (nonatomic, strong) DoneBlock doneBlock;
@@ -106,7 +106,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 
 - (void)initNavBar {
     self.navigationController.navigationBar.hidden = YES;
-    _customNaview = [[CustomNavigationView alloc] initWithFrame:CGRectMake(0, 0, GDSCR_W, GDNavigationBarHeight)];
+    _customNaview = [[GDNavView alloc] initWithFrame:CGRectMake(0, 0, GDSCR_W, GDNavigationBarHeight)];
     [_customNaview.rightTitleBtn setTitle:@"下一步" forState:UIControlStateNormal];
     [self.view addSubview:_customNaview];
     
