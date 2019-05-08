@@ -17,7 +17,9 @@
 @property (weak, nonatomic) IBOutlet UIView *selectedView;
 @property (weak, nonatomic) IBOutlet UILabel *markOrder;
 @property (weak, nonatomic) IBOutlet UIImageView *duihao;
+
 @property (weak, nonatomic) IBOutlet UIView *icloudView;
+@property (weak, nonatomic) IBOutlet UILabel *icloudTip;
 
 @end
 
@@ -27,18 +29,19 @@
     _pickType = pickType;
     _asset = asset;
     
-    [self initCoverImg:asset];
+    [self initCloudView];
+    [self initCoverImg];
     
-    if (pickType == PickeTypeLivephoto) {
+    if (_pickType == PickeTypeLivephoto) {
         _liveMark.hidden = NO;
         
-    }else if (pickType == PickerTypeVideo){
+    }else if (_pickType == PickerTypeVideo){
         _videoTimeLabel.hidden = _shadowView.hidden = NO;
-        [self initTimeLabel:asset];
+        [self initTimeLabel];
         
-    }else if (pickType == PickerTypeBurst) {
+    }else if (_pickType == PickerTypeBurst) {
         _burstCountLabel.hidden = _shadowView.hidden = NO;
-        [self initBurstCountLabel:asset];
+        [self initBurstCountLabel];
     }
 }
 
@@ -53,43 +56,75 @@
     }
 }
 
+
+#pragma mark - iCloud
+
+- (IBAction)downloadiCloud:(id)sender {
+    __weak typeof(self) weakSelf = self;
+    
+    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst) {
+        
+        PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+        option.networkAccessAllowed = YES;
+        option.synchronous = NO;
+        option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+            });
+        };
+        
+        [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+            
+            if (imageData) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    weakSelf.icloudView.hidden = YES;
+                });
+            }
+        }];
+    }
+}
+
 #pragma mark - 非公开
-- (void)initCoverImg:(PHAsset *)asset {
+
+- (void)initCloudView {
+//    __block BOOL isInLocalAblum = YES;
+    
+    //判断是否在iCloud中
     PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
     option.networkAccessAllowed = NO;
-    option.synchronous = YES;
-
-    __block BOOL isInLocalAblum = YES;
-    
+    option.synchronous = NO;
     __weak typeof(self) weakSelf = self;
-    [[PHCachingImageManager defaultManager] requestImageDataForAsset:asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-        isInLocalAblum = imageData ? YES : NO;
+    [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+        BOOL isInLocalAblum = imageData ? YES : NO;
         weakSelf.icloudView.hidden = isInLocalAblum;
     }];
+}
+
+- (void)initCoverImg {
+   __weak typeof(self) weakSelf = self;
     
-    
+    //获取缩略图
     PHImageRequestOptions *options = [[PHImageRequestOptions alloc] init];
-    options.resizeMode   = PHImageRequestOptionsResizeModeExact;
+    options.resizeMode   = PHImageRequestOptionsResizeModeFast;
     options.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
     options.synchronous = YES;
     options.networkAccessAllowed = YES;
-    
 //    BOOL isInCloud = asset.sourceType == PHAssetSourceTypeCloudShared;
     
-    CGSize size = [GDUtils sizeMaxWidth:150.f withAsset:asset];
-    [[PHImageManager defaultManager] requestImageForAsset:asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
+    CGSize size = [GDUtils sizeMaxWidth:150.f withAsset:_asset];
+    [[PHImageManager defaultManager] requestImageForAsset:_asset targetSize:size contentMode:PHImageContentModeDefault options:options resultHandler:^(UIImage * _Nullable result, NSDictionary * _Nullable info) {
         
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.coverImg setImage:result];
-            
         });
     }];
 }
 
-- (void)initTimeLabel:(PHAsset *)asset {
+- (void)initTimeLabel {
     
     __weak typeof(self) weakSelf = self;
-    [[PHImageManager defaultManager] requestAVAssetForVideo:asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+    [[PHImageManager defaultManager] requestAVAssetForVideo:_asset options:nil resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
         float videoLength = (float)asset.duration.value / asset.duration.timescale;
         dispatch_async(dispatch_get_main_queue(), ^{
             weakSelf.videoTimeLabel.text = [NSString stringWithFormat:@"%lds", (long)videoLength];
@@ -97,12 +132,17 @@
     }];
 }
 
-- (void)initBurstCountLabel:(PHAsset *)asset {
+- (void)initBurstCountLabel {
     
     PHFetchOptions *fetchOptions = [PHFetchOptions new];
     fetchOptions.includeAllBurstAssets = YES;
-    PHFetchResult *fetchResult = [PHAsset fetchAssetsWithBurstIdentifier:asset.burstIdentifier options:fetchOptions];
+    PHFetchResult *fetchResult = [PHAsset fetchAssetsWithBurstIdentifier:_asset.burstIdentifier options:fetchOptions];
     NSUInteger burstCount = fetchResult.count;
-    _burstCountLabel.text = [NSString stringWithFormat:@"%lu张", burstCount];
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        weakSelf.burstCountLabel.text = [NSString stringWithFormat:@"%lu张", burstCount];
+    });
 }
+
 @end

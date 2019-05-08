@@ -20,14 +20,14 @@
 + (CGSize)sizeMaxWidth:(float)maxWidth withAsset:(PHAsset *)asset;
 
 
-/** 从phasset数组-->img数组
+/** 从phasset数组-->img数组（原图）
  * phasset : PHAsset数组
  *
  */
 + (void)imgsWithPhassetArr:(NSArray *)phassetArr completion:(void (^)(NSMutableArray *images))completionBlock;
 
 
-/** 从phasset返回所有连拍图片
+/** 从phasset返回所有连拍图片 (原图)
  * phasset : 从相册取到的连拍代表
  *  : 所有的连拍图片
  */

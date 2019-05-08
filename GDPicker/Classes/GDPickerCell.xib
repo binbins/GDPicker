@@ -80,17 +80,28 @@
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44n-7T-Mma" userLabel="icloudView">
                         <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-OG-CDf">
-                                <rect key="frame" x="195" y="191" width="49" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="son-6w-dAb">
+                                <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="downloadiCloud:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IGI-mP-Jr0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-OG-CDf">
+                                <rect key="frame" x="225" y="216" width="39" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="BpI-OG-CDf" secondAttribute="bottom" constant="30" id="Bfs-zf-HFJ"/>
-                            <constraint firstAttribute="trailing" secondItem="BpI-OG-CDf" secondAttribute="trailing" constant="30" id="zlH-lQ-o9l"/>
+                            <constraint firstAttribute="bottom" secondItem="son-6w-dAb" secondAttribute="bottom" id="7G0-bh-2rx"/>
+                            <constraint firstAttribute="bottom" secondItem="BpI-OG-CDf" secondAttribute="bottom" constant="10" id="Bfs-zf-HFJ"/>
+                            <constraint firstItem="son-6w-dAb" firstAttribute="top" secondItem="44n-7T-Mma" secondAttribute="top" id="RMb-Kc-a7Z"/>
+                            <constraint firstItem="son-6w-dAb" firstAttribute="leading" secondItem="44n-7T-Mma" secondAttribute="leading" id="b5w-7m-MjK"/>
+                            <constraint firstAttribute="trailing" secondItem="son-6w-dAb" secondAttribute="trailing" id="d4O-qy-ViB"/>
+                            <constraint firstAttribute="trailing" secondItem="BpI-OG-CDf" secondAttribute="trailing" constant="10" id="zlH-lQ-o9l"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -121,6 +132,7 @@
                 <outlet property="burstCountLabel" destination="SBu-9K-l5q" id="m2p-wP-AAs"/>
                 <outlet property="coverImg" destination="iiD-aG-vxj" id="ufS-t2-FFm"/>
                 <outlet property="duihao" destination="y3B-5y-GNb" id="DQe-9t-xp8"/>
+                <outlet property="icloudTip" destination="BpI-OG-CDf" id="vuu-cZ-Xq0"/>
                 <outlet property="icloudView" destination="44n-7T-Mma" id="lj9-Ve-PN0"/>
                 <outlet property="liveMark" destination="lJy-Bn-Tkx" id="88v-MF-Mlq"/>
                 <outlet property="markOrder" destination="DyS-Y6-sJ8" id="5LR-KH-4RS"/>

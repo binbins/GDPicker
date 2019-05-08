@@ -92,7 +92,6 @@ typedef void (^DoneBlock)(NSArray *arr);
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     
-    
     if (!_isNotFirstAppear) {   //有点拗口
         _isNotFirstAppear = YES;
         __weak typeof(self) weakSelf = self;
@@ -264,10 +263,17 @@ typedef void (^DoneBlock)(NSArray *arr);
     GDPickerCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:NSStringFromClass([GDPickerCell class]) forIndexPath:indexPath];
     PHAsset *asset = self.pickerModels[indexPath.row];
     [cell setPickerType:_pickerType andPHAsset:asset];
+    
+    //多选的下标
     NSUInteger markOrder = [self imgIndexAtSelectedArray:indexPath];
     cell.selectedOrder = markOrder;
     return cell;
 }
+
+- (void)collectionView:(UICollectionView *)collectionView willDisplayCell:(UICollectionViewCell *)cell forItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     PHAsset *asset = self.pickerModels[indexPath.row];

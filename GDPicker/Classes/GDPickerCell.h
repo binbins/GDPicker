@@ -14,6 +14,8 @@
 @property (nonatomic, strong) PHAsset *asset;
 @property (nonatomic, assign) NSUInteger selectedOrder;
 
+//赋值
 - (void)setPickerType:(PickerType)pickType andPHAsset:(PHAsset *)asset;
+
 
 @end
