@@ -14,7 +14,7 @@ typedef NS_ENUM(NSInteger, PickerType)
     PickerTypeManyPhoto,
     PickerTypeVideo,
     PickerTypeBurst,
-    PickeTypeLivephoto
+    PickeTypeLivephoto,
 };
 
 @interface GDPickerCtrl : UIViewController

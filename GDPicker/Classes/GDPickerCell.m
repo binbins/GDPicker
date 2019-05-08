@@ -91,6 +91,23 @@
             });
         }];
     }
+    else if (_pickType == PickeTypeLivephoto) {
+        if (@available(iOS 9.1, *)) {
+            PHLivePhotoRequestOptions *option = [[PHLivePhotoRequestOptions alloc] init];
+            option.networkAccessAllowed = NO;   //是no
+            
+            [[PHImageManager defaultManager] requestLivePhotoForAsset:_asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option
+                                                        resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    BOOL isInLocalAblum = livePhoto ? YES : NO;
+                    weakSelf.icloudView.hidden = isInLocalAblum;
+                });
+            }];
+        } else {
+            // Fallback on earlier versions
+            //不管9.1以下的了
+        }
+    }
     
     
 }
@@ -114,14 +131,12 @@
         };
         
         [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-            
             if (imageData) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    [weakSelf setPickerType:weakSelf.pickType andPHAsset:weakSelf.asset];
-                });
+                [weakSelf refreshCellWhenCloudDone];
             }
         }];
-    }
+    }   //image
+    
     else if (_pickType == PickerTypeVideo) {
         PHVideoRequestOptions *option = [[PHVideoRequestOptions alloc] init];
         option.version = PHVideoRequestOptionsVersionOriginal;
@@ -135,13 +150,44 @@
         
         [[PHImageManager defaultManager] requestAVAssetForVideo:_asset options:option resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
             if (asset) {
-                dispatch_async(dispatch_get_main_queue(), ^{
-                    //下载完毕，更新
-                    [weakSelf setPickerType:weakSelf.pickType andPHAsset:weakSelf.asset];
-                });
+                [weakSelf refreshCellWhenCloudDone];
             }
         }];
-    }
+    }   //video
+    
+    else if (_pickType == PickeTypeLivephoto) {
+        if (@available(iOS 9.1, *)) {
+            PHLivePhotoRequestOptions *option = [[PHLivePhotoRequestOptions alloc] init];
+            option.networkAccessAllowed = YES;
+            option.version = PHImageRequestOptionsVersionOriginal;
+            option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
+            option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+                });
+            };
+            
+            [[PHImageManager defaultManager] requestLivePhotoForAsset:_asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
+                if (livePhoto) {
+                    [weakSelf refreshCellWhenCloudDone];
+                }
+            }];
+            
+        } else {
+            // Fallback on earlier versions
+            //不管9.1以下的了
+        }
+        
+    }   //livephoto
+    
+}
+
+- (void)refreshCellWhenCloudDone {
+    
+    __weak typeof(self) weakSelf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [weakSelf setPickerType:weakSelf.pickType andPHAsset:weakSelf.asset];
+    });
 }
 
 #pragma mark - 非公开
