@@ -25,7 +25,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 @property (nonatomic, strong) DoneBlock doneBlock;
 @property (nonatomic, strong) NSMutableArray *pickerModels, *selectedIndexs;
 
-@property (nonatomic, assign) BOOL isVideoPicker, isLivePhotoPicker, isBurstPicker, isPhotosPicker;
+@property (nonatomic, assign) BOOL isVideoPicker, isLivePhotoPicker, isBurstPicker, isPhotosPicker, isGifPicker;
 
 @end
 
@@ -85,7 +85,8 @@ typedef void (^DoneBlock)(NSArray *arr);
     
     [self initSpecificTypePicker];
     [self initPickerCollection];
-    [self initPickerData];
+//    [self initPickerData];
+    [self initNewPickerData];
     [self initTipView];
 }
 
@@ -127,9 +128,13 @@ typedef void (^DoneBlock)(NSArray *arr);
     }else if (_pickerType == PickerTypeVideo){
         _pickName.text = @"选择视频";
         _isVideoPicker = YES;
-    }else if (_pickerType == PickeTypeLivephoto){
+    }else if (_pickerType == PickerTypeLivephoto){
         _pickName.text = @"选择Livephoto";
         _isLivePhotoPicker = YES;
+    }
+    else if (_pickerType == PickerTypeGif){
+        _pickName.text = @"选择GIF";
+        _isGifPicker = YES;
     }
 }
 
@@ -154,21 +159,55 @@ typedef void (^DoneBlock)(NSArray *arr);
 
 #pragma mark - data
 
-- (void)initPickerData {
+- (void)initNewPickerData {
+    __weak typeof(self) weakSelf = self;
     
-    self.pickerModels = nil;  //刷新前清空一下
+    [self.pickerModels removeAllObjects];
     
-    PHFetchResult<PHAssetCollection *> *assetCollections = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
-    for (PHAssetCollection *assetCollection in assetCollections) {
-        [self enumerateAssetsInAssetCollection:assetCollection original:NO];
-    }
+    PHFetchResult *smartAlbums = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeAlbumRegular options:nil];
+    [smartAlbums enumerateObjectsUsingBlock:^(PHAssetCollection * _Nonnull collection, NSUInteger idx, BOOL *stop) {
+        //        NSLog(@"相簿名:%@", assetCollection.localizedTitle);
+        NSString *aName = collection.localizedTitle;
+        if ([aName isEqualToString:@"All Photos"] && weakSelf.isPhotosPicker) {
+            
+            [weakSelf enumerateAssestCollection:collection];
+        }
+        else if ([aName isEqualToString:@"Videos"] && weakSelf.isVideoPicker) {
+            
+            [weakSelf enumerateAssestCollection:collection];
+        }
+        else if ([aName isEqualToString:@"Bursts"] && weakSelf.isBurstPicker) {
+            
+            [weakSelf enumerateAssestCollection:collection];
+        }
+        else if ([aName isEqualToString:@"Live Photos"] && weakSelf.isLivePhotoPicker) {
+            
+            [weakSelf enumerateAssestCollection:collection];
+        }
+        else if ([aName isEqualToString:@"Animated"] && weakSelf.isGifPicker) {
+            
+            [weakSelf enumerateAssestCollection:collection];
+        }
+        
+    }];
     
-    PHAssetCollection *cameraRoll = [PHAssetCollection fetchAssetCollectionsWithType:PHAssetCollectionTypeSmartAlbum subtype:PHAssetCollectionSubtypeSmartAlbumUserLibrary options:nil].lastObject;
-    [self enumerateAssetsInAssetCollection:cameraRoll original:NO];
 }
 
+- (void)enumerateAssestCollection:(PHAssetCollection *)pCollection {
+    PHFetchOptions *fetchOption = [[PHFetchOptions alloc] init];
+    fetchOption.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
+    PHFetchResult<PHAsset *> *assets = [PHAsset fetchAssetsInAssetCollection:pCollection options:fetchOption];
+    
+    for (PHAssetCollection *a in assets) {
+        [self.pickerModels addObject:a];
+    }
+    
+    //题目
+    _pickName.text = [_pickName.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
+}
+
+/*
 - (void)enumerateAssetsInAssetCollection:(PHAssetCollection *)assetCollection original:(BOOL)original{
-    //        NSLog(@"相簿名:%@", assetCollection.localizedTitle);
     
     PHFetchOptions *fetchOption = [[PHFetchOptions alloc] init];
     fetchOption.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"creationDate" ascending:YES]];
@@ -208,6 +247,8 @@ typedef void (^DoneBlock)(NSArray *arr);
         }
     }
 }
+
+*/
 
 #pragma mark - out let
 

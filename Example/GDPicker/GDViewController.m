@@ -11,7 +11,9 @@
 
 #import "GDViewController.h"
 #import "ResultCell.h"
-@import GDPicker;
+
+#import <GDPicker/GDPickerCtrl.h>
+#import <GDPicker/GDUtils.h>
 
 @interface GDViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *resultCollection;
@@ -58,10 +60,11 @@
 }
 
 - (IBAction)livephotoTouched:(id)sender {
-    [self showPicker:PickeTypeLivephoto];
+    [self showPicker:PickerTypeLivephoto];
 }
 
 - (IBAction)gifTouched:(id)sender {
+    [self showPicker:PickerTypeGif];
 }
 
 #pragma mark - show & process

@@ -36,7 +36,7 @@
     [self initCloudView];
     [self initCoverImg];
     
-    if (_pickType == PickeTypeLivephoto) {
+    if (_pickType == PickerTypeLivephoto) {
         _liveMark.hidden = NO;
         
     }else if (_pickType == PickerTypeVideo){
@@ -68,7 +68,7 @@
     //判断是否在iCloud中
     __weak typeof(self) weakSelf = self;
     
-    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst) {
+    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst || _pickType==PickerTypeGif) {
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
         option.networkAccessAllowed = NO;   //是no
         option.synchronous = NO;
@@ -91,7 +91,7 @@
             });
         }];
     }
-    else if (_pickType == PickeTypeLivephoto) {
+    else if (_pickType == PickerTypeLivephoto) {
         if (@available(iOS 9.1, *)) {
             PHLivePhotoRequestOptions *option = [[PHLivePhotoRequestOptions alloc] init];
             option.networkAccessAllowed = NO;   //是no
@@ -119,7 +119,7 @@
     }
     _onLoadCloud = YES;
     
-    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst) {
+    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst || _pickType==PickerTypeGif) {
         
         PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
         option.networkAccessAllowed = YES;
@@ -155,7 +155,7 @@
         }];
     }   //video
     
-    else if (_pickType == PickeTypeLivephoto) {
+    else if (_pickType == PickerTypeLivephoto) {
         if (@available(iOS 9.1, *)) {
             PHLivePhotoRequestOptions *option = [[PHLivePhotoRequestOptions alloc] init];
             option.networkAccessAllowed = YES;
