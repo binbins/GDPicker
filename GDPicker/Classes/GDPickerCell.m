@@ -21,6 +21,8 @@
 @property (weak, nonatomic) IBOutlet UIView *icloudView;
 @property (weak, nonatomic) IBOutlet UILabel *icloudTip;
 
+@property (nonatomic, assign) BOOL onLoadCloud;
+
 @end
 
 @implementation GDPickerCell
@@ -28,6 +30,8 @@
 - (void)setPickerType:(PickerType)pickType andPHAsset:(PHAsset *)asset {
     _pickType = pickType;
     _asset = asset;
+    
+    _onLoadCloud = NO;
     
     [self initCloudView];
     [self initCoverImg];
@@ -59,8 +63,44 @@
 
 #pragma mark - iCloud
 
+- (void)initCloudView {
+    
+    //判断是否在iCloud中
+    __weak typeof(self) weakSelf = self;
+    
+    if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst) {
+        PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
+        option.networkAccessAllowed = NO;   //是no
+        option.synchronous = NO;
+        
+        [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                BOOL isInLocalAblum = imageData ? YES : NO;
+                weakSelf.icloudView.hidden = isInLocalAblum;
+            });
+        }];
+    }
+    else if (_pickType == PickerTypeVideo) {
+        PHVideoRequestOptions *option = [[PHVideoRequestOptions alloc] init];
+        option.networkAccessAllowed = NO;   //是no
+        
+        [[PHImageManager defaultManager] requestAVAssetForVideo:_asset options:option resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                BOOL isInLocalAblum = asset ? YES : NO;
+                weakSelf.icloudView.hidden = isInLocalAblum;
+            });
+        }];
+    }
+    
+    
+}
+
 - (IBAction)downloadiCloud:(id)sender {
     __weak typeof(self) weakSelf = self;
+    if (_onLoadCloud) {
+        return;
+    }
+    _onLoadCloud = YES;
     
     if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst) {
         
@@ -68,7 +108,6 @@
         option.networkAccessAllowed = YES;
         option.synchronous = NO;
         option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
-            
             dispatch_async(dispatch_get_main_queue(), ^{
                 weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
             });
@@ -78,7 +117,27 @@
             
             if (imageData) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    weakSelf.icloudView.hidden = YES;
+                    [weakSelf setPickerType:weakSelf.pickType andPHAsset:weakSelf.asset];
+                });
+            }
+        }];
+    }
+    else if (_pickType == PickerTypeVideo) {
+        PHVideoRequestOptions *option = [[PHVideoRequestOptions alloc] init];
+        option.version = PHVideoRequestOptionsVersionOriginal;
+        option.deliveryMode = PHVideoRequestOptionsDeliveryModeHighQualityFormat;
+        option.networkAccessAllowed = YES;
+        option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+                weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+            });
+        };
+        
+        [[PHImageManager defaultManager] requestAVAssetForVideo:_asset options:option resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
+            if (asset) {
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    //下载完毕，更新
+                    [weakSelf setPickerType:weakSelf.pickType andPHAsset:weakSelf.asset];
                 });
             }
         }];
@@ -86,20 +145,6 @@
 }
 
 #pragma mark - 非公开
-
-- (void)initCloudView {
-//    __block BOOL isInLocalAblum = YES;
-    
-    //判断是否在iCloud中
-    PHImageRequestOptions *option = [[PHImageRequestOptions alloc] init];
-    option.networkAccessAllowed = NO;
-    option.synchronous = NO;
-    __weak typeof(self) weakSelf = self;
-    [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
-        BOOL isInLocalAblum = imageData ? YES : NO;
-        weakSelf.icloudView.hidden = isInLocalAblum;
-    }];
-}
 
 - (void)initCoverImg {
    __weak typeof(self) weakSelf = self;
