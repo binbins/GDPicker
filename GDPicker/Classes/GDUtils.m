@@ -6,6 +6,7 @@
 //
 
 #import "GDUtils.h"
+#import "UIImage+gd_FlieName.h"
 
 @implementation GDUtils
 
@@ -50,6 +51,7 @@
             dispatch_async(queue, ^{
                 [cLock lockWhenCondition:i];
                 if (result) {
+                    result.gd_fileName = [each valueForKey:@"filename"];
                     [resultImgs addObject:result];
 //                    NSLog(@"使用结果:%d", i);
                 }
@@ -97,6 +99,7 @@
                 
                 [lock lockWhenCondition:i];
                 if (result) {
+                    result.gd_fileName = [each valueForKey:@"filename"];
                     [resultImgs addObject:result];
 //                    NSLog(@"使用结果:%d", i);
                 }

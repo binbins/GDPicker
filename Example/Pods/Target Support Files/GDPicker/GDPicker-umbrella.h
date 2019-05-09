@@ -11,9 +11,11 @@
 #endif
 
 #import "GDNavView.h"
+#import "GDPicker.h"
 #import "GDPickerCell.h"
 #import "GDPickerCtrl.h"
 #import "GDUtils.h"
+#import "UIImage+gd_FlieName.h"
 
 FOUNDATION_EXPORT double GDPickerVersionNumber;
 FOUNDATION_EXPORT const unsigned char GDPickerVersionString[];

@@ -12,8 +12,7 @@
 #import "GDViewController.h"
 #import "ResultCell.h"
 
-#import <GDPicker/GDPickerCtrl.h>
-#import <GDPicker/GDUtils.h>
+#import <GDPicker/GDPicker.h>
 
 
 @interface GDViewController () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource>
@@ -85,6 +84,10 @@
 
             [GDUtils imgsWithPhassetArr:resultArr completion:^(NSMutableArray *images) {
                 [weakSelf reloadCollection:images];
+                
+                for (UIImage *each in images) {
+                    NSLog(@"图片名字%@", each.gd_fileName);
+                }
             }];
         }
     }];

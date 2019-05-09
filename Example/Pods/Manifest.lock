@@ -1,5 +1,5 @@
 PODS:
-  - GDPicker (0.1.0)
+  - GDPicker (0.1.1)
 
 DEPENDENCIES:
   - GDPicker (from `../`)
@@ -9,7 +9,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  GDPicker: 102bf5feef01becd4b69a7d1ed3559110c21728f
+  GDPicker: 7b0504296a311fd5e7164a70af778741cdc9f194
 
 PODFILE CHECKSUM: 78f0951e63bab0d27420170eac46eb414192d9e1
 
