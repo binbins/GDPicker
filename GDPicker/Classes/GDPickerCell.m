@@ -64,7 +64,7 @@
     
     if (selectedOrder>0) {
         _selectedView.hidden = _duihao.hidden = NO;
-        _markOrder.text = [NSString stringWithFormat:@"%lu", selectedOrder];
+        _markOrder.text = [NSString stringWithFormat:@"%lu",(unsigned long) selectedOrder];
     }else {
         _selectedView.hidden = _duihao.hidden = YES;
     }
@@ -242,7 +242,7 @@
     
     __weak typeof(self) weakSelf = self;
     dispatch_async(dispatch_get_main_queue(), ^{
-        weakSelf.burstCountLabel.text = [NSString stringWithFormat:@"%lu张", burstCount];
+        weakSelf.burstCountLabel.text = [NSString stringWithFormat:@"%lu张", (unsigned long)burstCount];
     });
 }
 
