@@ -1,5 +1,7 @@
 use_frameworks!
 
+platform :ios, '9.1'
+
 target 'GDPicker_Example' do
   pod 'GDPicker', :path => '../'
 

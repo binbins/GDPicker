@@ -27,6 +27,16 @@
 
 @implementation GDPickerCell
 
+
+- (UIImage *)imageForName:(NSString *)imgName {
+    // xib中的图片要添加所属bundle eg: GDPicker.bundle/done.png
+    
+//    UIScreen.mainScreen.scale
+    NSString *iconPath = [[NSBundle bundleForClass:self.class] pathForResource:imgName ofType:nil inDirectory:@"GDPicker.bundle"];
+    UIImage *result = [UIImage imageWithContentsOfFile:iconPath];
+    return result;
+}
+
 - (void)setPickerType:(PickerType)pickType andPHAsset:(PHAsset *)asset {
     _pickType = pickType;
     _asset = asset;

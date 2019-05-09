@@ -22,10 +22,12 @@
 
 - (void)initView {
     
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = GDHEX(0xf6f6f6);
     [self.cusNavView addSubview:self.left0Btn];
     [self.cusNavView addSubview:self.titleLab];
     [self.cusNavView addSubview:self.rightTitleBtn];
+    _rightTitleBtn.frame = CGRectMake(GDSCR_W-66-10, 7, 66, 30);
+    
     [self addSubview:self.bgImg];
     [self addSubview:self.cusNavView];
     [self addSubview:self.btmLine];
@@ -34,38 +36,12 @@
 
 #pragma mark -- handleAction
 
-- (void)cus_setNavBackgroundColor:(UIColor *)color {
-    self.backgroundColor = color;
-}
-
-- (void)cus_setNavBackgroundImage:(UIImage *)image {
-    if (image) {
-        self.bgImg.image = image;
-    }
-}
-
-- (void)cus_setNavTintColor:(UIColor *)color
-{
-    if (color) {
-        self.left0Btn.tintColor = color;
-        self.rightTitleBtn.tintColor = color;
-    }
-}
-
-- (void)cus_setNavTitleColor:(UIColor *)color
-{
-    if (color) {
-        self.titleLab.textColor = color;
-    }
-}
-
 - (void)handleBack:(id)sender
 {
     if (self.handleBackBlock) {
         self.handleBackBlock();
     }
 }
-
 
 - (void)handleRightTitleBtn:(id)sender
 {
@@ -104,8 +80,7 @@
         _left0Btn.titleLabel.textColor = GDImportantColor;
         _left0Btn.tintColor = GDImportantColor;
         
-        NSBundle *podBundlu = [NSBundle bundleForClass:[self class]];
-        NSString *iconPath = [podBundlu pathForResource:@"gdback@2x.png" ofType:nil inDirectory:@"GDPicker.bundle"];
+        NSString *iconPath = [[NSBundle bundleForClass:self.class] pathForResource:@"gdback@2x.png" ofType:nil inDirectory:@"GDPicker.bundle"];
         UIImage *icon = [UIImage imageWithContentsOfFile:iconPath];
         [_left0Btn setImage:icon forState:UIControlStateNormal];
         [_left0Btn addTarget:self action:@selector(handleBack:) forControlEvents:UIControlEventTouchUpInside];
@@ -127,12 +102,9 @@
 - (UIButton *)rightTitleBtn
 {
     if (!_rightTitleBtn) {
-        _rightTitleBtn = [UIButton buttonWithType:UIButtonTypeSystem];
-        _rightTitleBtn.frame = CGRectMake(GDSCR_W-66-10, 7, 66, 30);
-        _rightTitleBtn.contentMode = UIViewContentModeScaleAspectFit;
+        _rightTitleBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _rightTitleBtn.titleLabel.font = [UIFont systemFontOfSize:14];
-        _rightTitleBtn.titleLabel.textColor = GDImportantColor;
-        _rightTitleBtn.tintColor = GDImportantColor;
+        [_rightTitleBtn setTitleColor:GDImportantColor forState:UIControlStateNormal];
         [_rightTitleBtn addTarget:self action:@selector(handleRightTitleBtn:) forControlEvents:UIControlEventTouchUpInside];
         [_rightTitleBtn sizeToFit];
     }

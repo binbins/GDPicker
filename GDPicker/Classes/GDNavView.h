@@ -38,13 +38,5 @@
 @property (copy, nonatomic) void (^handleBackBlock)(void);
 @property (copy, nonatomic) void (^handleRightTitleBlock)(void);
 
-- (void)cus_setNavBackgroundColor:(UIColor *)color;
-
-- (void)cus_setNavBackgroundImage:(UIImage *)image;
-
-- (void)cus_setNavTintColor:(UIColor *)color;
-
-- (void)cus_setNavTitleColor:(UIColor *)color;
-
 
 @end

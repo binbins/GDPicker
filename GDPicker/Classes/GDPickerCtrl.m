@@ -10,19 +10,21 @@
 #import "GDNavView.h"
 #import "GDPickerCell.h"
 #import "GDUtils.h"
-#import "TipView.h"
 
 typedef void (^DoneBlock)(NSArray *arr);
 
-@interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, TipViewDelegate>
+@interface GDPickerCtrl () <UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, PHPhotoLibraryChangeObserver>
 
+@property (copy, nonatomic) NSString *pickerName;
 @property (nonatomic, strong) GDNavView *customNaview;
 @property (strong, nonatomic) UICollectionView *pickerCollection;
-@property (nonatomic, strong) TipView *tipsView;
 @property (nonatomic, strong) DoneBlock doneBlock;
 @property (nonatomic, strong) NSMutableArray *pickerModels, *selectedIndexs;
-
 @property (nonatomic, assign) BOOL isVideoPicker, isLivePhotoPicker, isBurstPicker, isPhotosPicker, isGifPicker;
+
+
+@property (nonatomic, strong) UIView *noView;
+@property (strong, nonatomic) UILabel *noViewTip;
 
 @end
 
@@ -79,10 +81,12 @@ typedef void (^DoneBlock)(NSArray *arr);
     [super viewDidLoad];
     
     [self initNavBar];
-    [self initSpecificTypePicker];
     [self initPickerCollection];
+    [self initNoView];
+    [self initSpecificTypePicker];
     [self initNewPickerData];
-    [self initTipView];
+    
+    [[PHPhotoLibrary sharedPhotoLibrary] registerChangeObserver:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -94,20 +98,18 @@ typedef void (^DoneBlock)(NSArray *arr);
         dispatch_async(dispatch_get_main_queue(), ^{
             [weakSelf.pickerCollection reloadData];
             if (self.pickerModels.count > 0) {
-                [self.tipsView stateHide];
                 NSIndexPath *endIndex = [NSIndexPath indexPathForItem:self.pickerModels.count-1 inSection:0];
                 [weakSelf.pickerCollection scrollToItemAtIndexPath:endIndex atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
-            }else {
-                [weakSelf.tipsView stateNoResult];
             }
         });
     }
 }
 
 - (void)initNavBar {
+    self.view.backgroundColor = [UIColor whiteColor];
+    
     self.navigationController.navigationBar.hidden = YES;
     _customNaview = [[GDNavView alloc] initWithFrame:CGRectMake(0, 0, GDSCR_W, GDNavigationBarHeight)];
-    [_customNaview.rightTitleBtn setTitle:@"下一步" forState:UIControlStateNormal];
     [self.view addSubview:_customNaview];
     
     __weak typeof(self) weakSelf = self;
@@ -115,6 +117,7 @@ typedef void (^DoneBlock)(NSArray *arr);
         [weakSelf backBtnClicked:nil];
     };
     
+    [_customNaview.rightTitleBtn setTitle:@"下一步" forState:UIControlStateNormal];
     _customNaview.handleRightTitleBlock = ^{
         [weakSelf nextBtnClicked:nil];
     };
@@ -126,32 +129,34 @@ typedef void (^DoneBlock)(NSArray *arr);
     _customNaview.rightTitleBtn.hidden = _isSingleSelected;    //单选picker没有下一步btn
     
     if (_pickerType == PickerTypeManyPhoto) {
-        _customNaview.titleLab.text = @"选择多张照片";
+        _pickerName = @"选择多张照片";
         _isPhotosPicker = YES;
         _customNaview.rightTitleBtn.enabled = NO;
         _customNaview.rightTitleBtn.alpha = 0.4;
     }else if (_pickerType == PickerTypeSinglePhoto){
-        _customNaview.titleLab.text = @"选择照片";
+        _pickerName = @"选择照片";
         _isPhotosPicker = YES;
     }else if (_pickerType == PickerTypeBurst){
-        _customNaview.titleLab.text = @"选择连拍";
+        _pickerName = @"选择连拍";
         _isBurstPicker = YES;
     }else if (_pickerType == PickerTypeVideo){
-        _customNaview.titleLab.text = @"选择视频";
+        _pickerName = @"选择视频";
         _isVideoPicker = YES;
     }else if (_pickerType == PickerTypeLivephoto){
-        _customNaview.titleLab.text = @"选择Livephoto";
+        _pickerName = @"选择Livephoto";
         _isLivePhotoPicker = YES;
     }
     else if (_pickerType == PickerTypeGif){
-        _customNaview.titleLab.text = @"选择GIF";
+        _pickerName = @"选择GIF";
         _isGifPicker = YES;
     }
+    _customNaview.titleLab.text = @"选择GIF";
 }
 
 - (void)initPickerCollection {
     UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
     _pickerCollection = [[UICollectionView alloc] initWithFrame:CGRectMake(0, GDNavigationBarHeight, GDSCR_W, GDSCR_H-GDNavigationBarHeight) collectionViewLayout:layout];
+    _pickerCollection.backgroundColor = UIColor.whiteColor;
     [self.view addSubview:_pickerCollection];
     _pickerCollection.delegate = self;
     _pickerCollection.dataSource = self;
@@ -159,6 +164,34 @@ typedef void (^DoneBlock)(NSArray *arr);
     NSString *cellName = NSStringFromClass([GDPickerCell class]);
     UINib *nib = [UINib nibWithNibName:cellName bundle:[NSBundle bundleForClass:[GDPickerCell class]]];
     [_pickerCollection registerNib:nib forCellWithReuseIdentifier:cellName];
+}
+
+
+- (void)initNoView {
+    _noView = [[UIView alloc] initWithFrame:CGRectMake(0, (GDSCR_H)/2-75, GDSCR_W, 150)];
+    _noViewTip = [[UILabel alloc] initWithFrame:CGRectMake(0, 100, GDSCR_W, 50)];
+    _noViewTip.textAlignment = NSTextAlignmentCenter;
+    _noViewTip.textColor = GDImportantColor;
+    _noView.hidden = YES;
+    [_noView addSubview:_noViewTip];
+    [self.pickerCollection addSubview:_noView];
+}
+
+- (void)refreshNoView {
+    
+    if (self.pickerModels.count == 0) {
+        _noView.hidden = NO;
+        
+        PHAuthorizationStatus status = [PHPhotoLibrary authorizationStatus];
+        if (status == PHAuthorizationStatusAuthorized) {
+            _noViewTip.text = @"没有找到内容";
+        }else {
+            _noViewTip.text = @"没有权限";
+        }
+        
+    }else {
+        _noView.hidden = YES;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -169,6 +202,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 
 - (void)dealloc {
     NSLog(@"picker销毁");
+    [PHPhotoLibrary.sharedPhotoLibrary unregisterChangeObserver:self];
 }
 
 #pragma mark - data
@@ -207,8 +241,9 @@ typedef void (^DoneBlock)(NSArray *arr);
     }];
     
     //题目
-    _customNaview.titleLab.text = [_customNaview.titleLab.text stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
-    
+    _customNaview.titleLab.text = [_pickerName stringByAppendingFormat:@"(%ld张)", (long)self.pickerModels.count];
+    [self refreshNoView];
+    [_pickerCollection reloadData];
 }
 
 - (void)enumerateAssestCollection:(PHAssetCollection *)pCollection {
@@ -349,16 +384,14 @@ typedef void (^DoneBlock)(NSArray *arr);
     }
 }
 
-#pragma mark - other
-- (void)initTipView {
-    _tipsView = [[TipView alloc] initWithFrame:CGRectMake(0, (GDSCR_H-64-49)/2-75, GDSCR_W, 150)];
-    _tipsView.delegate = self;
-    [self.pickerCollection addSubview:_tipsView];
+- (void)photoLibraryDidChange:(PHChange *)changeInstance {
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self initNewPickerData];
+    });
+    
 }
 
-- (void)touchTipView {
-    NSLog(@"touch tip view");
-}
 
 @end
 
