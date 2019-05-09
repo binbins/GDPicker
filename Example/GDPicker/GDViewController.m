@@ -37,6 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.navigationBar.hidden = YES;
     _resultCollection.delegate = self;
     _resultCollection.dataSource = self;
 }
@@ -81,16 +82,16 @@
                 [weakSelf reloadCollection:images];
             }];
         }else {
-//            NSLog(@"转化为图片中...");
-            
+
             [GDUtils imgsWithPhassetArr:resultArr completion:^(NSMutableArray *images) {
-//                NSLog(@"转化图片结束");
                 [weakSelf reloadCollection:images];
             }];
         }
     }];
     
-    [picker showIn:self];
+//    [picker showIn:self];
+    [picker pushInCtrl:self];
+    
 }
 
 - (void)reloadCollection:(NSArray *)imgs {

@@ -66,13 +66,23 @@ typedef void (^DoneBlock)(NSArray *arr);
     return self;
 }
 
-- (void)showIn:(UIViewController *)ctrl {
+- (void)presentInCtrl:(UIViewController *)ctrl {
     
     [ctrl presentViewController:self animated:YES completion:nil];
 }
 
+- (void)pushInCtrl:(UIViewController *)ctrl {
+    [ctrl.navigationController pushViewController:self animated:YES];
+}
+
 - (void)dismiss {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    if (self.navigationController) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
+    else {
+        [self dismissViewControllerAnimated:YES completion:nil];
+    }
 }
 
 #pragma mark - view
@@ -201,7 +211,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 }
 
 - (void)dealloc {
-    NSLog(@"picker销毁");
+    NSLog(@"销毁%@", NSStringFromClass(self.class));
     [PHPhotoLibrary.sharedPhotoLibrary unregisterChangeObserver:self];
 }
 
@@ -271,7 +281,7 @@ typedef void (^DoneBlock)(NSArray *arr);
 }
 
 - (void)backBtnClicked:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self dismiss];
 }
 
 #pragma mark - collectiondelegate

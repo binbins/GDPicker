@@ -24,9 +24,24 @@ typedef NS_ENUM(NSInteger, PickerType)
 
 - (instancetype)initWithPickerType:(PickerType)typeType CompleteBlock:(void(^)(NSArray<PHAsset *> *resultArr))completeBlock;
 
-- (void)showIn:(UIViewController *)ctrl;
 
-- (void)dismiss;
+
+/**
+ 模态弹出
+
+ @param ctrl 当前控制器
+ */
+- (void)presentInCtrl:(UIViewController *)ctrl;
+
+
+/**
+ push弹出
+
+ @param ctrl 当前控制器
+ */
+- (void)pushInCtrl:(UIViewController *)ctrl;
+
+
 
 
 

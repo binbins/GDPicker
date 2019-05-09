@@ -1,20 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="whP-gf-Uak">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="wQg-tq-qST">
             <objects>
-                <viewController id="whP-gf-Uak" customClass="GDViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GDViewController" id="whP-gf-Uak" customClass="GDViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uEw-UM-LJ8"/>
                         <viewControllerLayoutGuide type="bottom" id="Mvr-aV-6Um"/>
@@ -61,42 +59,42 @@
                                 <rect key="frame" x="0.0" y="405" width="375" height="262"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LLP-vA-ooz">
-                                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="43.5" width="375" height="44"/>
                                         <state key="normal" title="选择多张相片"/>
                                         <connections>
                                             <action selector="multipleImgTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="YbO-M9-3aG"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gke-DV-rHQ">
-                                        <rect key="frame" x="0.0" y="88" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="87.5" width="375" height="43.5"/>
                                         <state key="normal" title="选择连拍"/>
                                         <connections>
                                             <action selector="burstImgTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="ub3-0e-N30"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gcg-ex-qNo">
-                                        <rect key="frame" x="0.0" y="131.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="131" width="375" height="43.5"/>
                                         <state key="normal" title="选择视频"/>
                                         <connections>
                                             <action selector="videoTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="vfd-46-ZmA"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="77h-yY-Fke">
-                                        <rect key="frame" x="0.0" y="175" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="174.5" width="375" height="44"/>
                                         <state key="normal" title="选择livephoto"/>
                                         <connections>
                                             <action selector="livephotoTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="2X9-rn-pjC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ta-XQ-tE9">
-                                        <rect key="frame" x="0.0" y="219" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="218.5" width="375" height="43.5"/>
                                         <state key="normal" title="选择gif"/>
                                         <connections>
                                             <action selector="gifTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="pQk-PG-Ubu"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NY6-mX-SJP">
-                                        <rect key="frame" x="0.0" y="0.5" width="375" height="43.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                         <state key="normal" title="选择单张相片"/>
                                         <connections>
                                             <action selector="singImgTouched:" destination="whP-gf-Uak" eventType="touchUpInside" id="8MJ-vj-Tpr"/>
