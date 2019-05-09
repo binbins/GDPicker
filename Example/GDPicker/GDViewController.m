@@ -84,10 +84,9 @@
 
             [GDUtils imgsWithPhassetArr:resultArr completion:^(NSMutableArray *images) {
                 [weakSelf reloadCollection:images];
-                
-                for (UIImage *each in images) {
-                    NSLog(@"图片名字%@", each.gd_fileName);
-                }
+            
+                //删除最后一个
+//                [weakSelf libraryDeleteAssest:resultArr.lastObject];
             }];
         }
     }];
@@ -132,7 +131,21 @@
 }
 
 
+#pragma mark - other
 
+- (void)libraryDeleteAssest:(PHAsset *)asset {
+    
+    [PHPhotoLibrary.sharedPhotoLibrary performChanges:^{
+        [PHAssetChangeRequest deleteAssets:@[asset]];
+    } completionHandler:^(BOOL success, NSError * _Nullable error) {
+       
+        if (success) {
+            NSLog(@"删除成功");
+        }else {
+            NSLog(@"删除失败");
+        }
+    }];
+}
 
 
 @end
