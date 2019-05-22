@@ -15,6 +15,7 @@
 #import "GDPickerCell.h"
 #import "GDPickerCtrl.h"
 #import "GDUtils.h"
+#import "PHAsset+gd_bool.h"
 #import "UIImage+gd_FlieName.h"
 
 FOUNDATION_EXPORT double GDPickerVersionNumber;

@@ -11,6 +11,7 @@
 #import "GDUtils.h"
 #import "GDPickerCtrl.h"
 #import "UIImage+gd_FlieName.h"
+#import "PHAsset+gd_bool.h"
 
 
 #endif /* GDPicker_h */

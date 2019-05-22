@@ -7,6 +7,7 @@
 
 #import "GDPickerCell.h"
 #import "GDUtils.h"
+#import "PHAsset+gd_bool.h"
 
 @interface GDPickerCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *liveMark;
@@ -21,7 +22,6 @@
 @property (weak, nonatomic) IBOutlet UIView *icloudView;
 @property (weak, nonatomic) IBOutlet UILabel *icloudTip;
 
-@property (nonatomic, assign) BOOL onLoadCloud;
 
 @end
 
@@ -40,8 +40,6 @@
 - (void)setPickerType:(PickerType)pickType andPHAsset:(PHAsset *)asset {
     _pickType = pickType;
     _asset = asset;
-    
-    _onLoadCloud = NO;
     
     [self initCloudView];
     [self initCoverImg];
@@ -87,6 +85,9 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 BOOL isInLocalAblum = imageData ? YES : NO;
                 weakSelf.icloudView.hidden = isInLocalAblum;
+                if (!imageData && weakSelf.asset.gd_onLoading) {
+                    weakSelf.icloudTip.text = @"下载中...";
+                }
             });
         }];
     }
@@ -98,6 +99,10 @@
             dispatch_async(dispatch_get_main_queue(), ^{
                 BOOL isInLocalAblum = asset ? YES : NO;
                 weakSelf.icloudView.hidden = isInLocalAblum;
+                
+                if (!asset && weakSelf.asset.gd_onLoading) {
+                    weakSelf.icloudTip.text = @"下载中...";
+                }
             });
         }];
     }
@@ -111,6 +116,10 @@
                 dispatch_async(dispatch_get_main_queue(), ^{
                     BOOL isInLocalAblum = livePhoto ? YES : NO;
                     weakSelf.icloudView.hidden = isInLocalAblum;
+                    
+                    if (!livePhoto && weakSelf.asset.gd_onLoading) {
+                        weakSelf.icloudTip.text = @"下载中...";
+                    }
                 });
             }];
         } else {
@@ -124,10 +133,10 @@
 
 - (IBAction)downloadiCloud:(id)sender {
     __weak typeof(self) weakSelf = self;
-    if (_onLoadCloud) {
+    if (_asset.gd_onLoading) {
         return;
     }
-    _onLoadCloud = YES;
+    _asset.gd_onLoading = YES;
     
     if (_pickType==PickerTypeManyPhoto || _pickType==PickerTypeSinglePhoto || _pickType==PickerTypeBurst || _pickType==PickerTypeGif) {
         
@@ -142,6 +151,7 @@
         
         [[PHImageManager defaultManager] requestImageDataForAsset:_asset options:option resultHandler:^(NSData * _Nullable imageData, NSString * _Nullable dataUTI, UIImageOrientation orientation, NSDictionary * _Nullable info) {
             if (imageData) {
+                weakSelf.asset.gd_onLoading = NO;
                 [weakSelf refreshCellWhenCloudDone];
             }
         }];
@@ -160,6 +170,7 @@
         
         [[PHImageManager defaultManager] requestAVAssetForVideo:_asset options:option resultHandler:^(AVAsset * _Nullable asset, AVAudioMix * _Nullable audioMix, NSDictionary * _Nullable info) {
             if (asset) {
+                weakSelf.asset.gd_onLoading = NO;
                 [weakSelf refreshCellWhenCloudDone];
             }
         }];
@@ -179,6 +190,7 @@
             
             [[PHImageManager defaultManager] requestLivePhotoForAsset:_asset targetSize:PHImageManagerMaximumSize contentMode:PHImageContentModeAspectFit options:option resultHandler:^(PHLivePhoto * _Nullable livePhoto, NSDictionary * _Nullable info) {
                 if (livePhoto) {
+                    weakSelf.asset.gd_onLoading = NO;
                     [weakSelf refreshCellWhenCloudDone];
                 }
             }];
