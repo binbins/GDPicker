@@ -12,14 +12,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GDPickerCell" id="gTV-IL-0wX" customClass="GDPickerCell">
-            <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="iiD-aG-vxj">
-                        <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="lightTextColor"/>
                     </imageView>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GDPicker.bundle/livemark.png" translatesAutoresizingMaskIntoConstraints="NO" id="lJy-Bn-Tkx">
@@ -30,10 +30,10 @@
                         </constraints>
                     </imageView>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tw4-15-g6H">
-                        <rect key="frame" x="0.0" y="219" width="274" height="23"/>
+                        <rect key="frame" x="0.0" y="177" width="200" height="23"/>
                         <subviews>
                             <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12:12" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQg-ni-l71">
-                                <rect key="frame" x="239.5" y="4.5" width="29.5" height="14.5"/>
+                                <rect key="frame" x="165.5" y="4.5" width="29.5" height="14.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -55,10 +55,10 @@
                         </constraints>
                     </view>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZYA-fw-Jf0">
-                        <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DyS-Y6-sJ8">
-                                <rect key="frame" x="107" y="103" width="60.5" height="36"/>
+                                <rect key="frame" x="69.5" y="82" width="61" height="36"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -71,37 +71,46 @@
                         </constraints>
                     </view>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GDPicker.bundle/done.png" translatesAutoresizingMaskIntoConstraints="NO" id="y3B-5y-GNb">
-                        <rect key="frame" x="249" y="5" width="20" height="20"/>
+                        <rect key="frame" x="175" y="5" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="6Ar-A4-b5Q"/>
                             <constraint firstAttribute="height" constant="20" id="hke-b2-bhu"/>
                         </constraints>
                     </imageView>
                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="44n-7T-Mma" userLabel="icloudView">
-                        <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="son-6w-dAb">
-                                <rect key="frame" x="0.0" y="0.0" width="274" height="242"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <action selector="downloadiCloud:" destination="gTV-IL-0wX" eventType="touchUpInside" id="IGI-mP-Jr0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iCloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-OG-CDf">
-                                <rect key="frame" x="225" y="216" width="39" height="16"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                <nil key="textColor"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="下载中..." textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BpI-OG-CDf">
+                                <rect key="frame" x="141.5" y="179" width="53.5" height="16"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GDPicker.bundle/icloud.png" translatesAutoresizingMaskIntoConstraints="NO" id="Cg3-s5-LKJ">
+                                <rect key="frame" x="170" y="10" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="HeK-O1-OSB"/>
+                                    <constraint firstAttribute="width" secondItem="Cg3-s5-LKJ" secondAttribute="height" id="R0Y-4c-4zU"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.13333333333333333" green="0.13333333333333333" blue="0.13333333333333333" alpha="0.5" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="Cg3-s5-LKJ" firstAttribute="top" secondItem="44n-7T-Mma" secondAttribute="top" constant="10" id="2Na-er-dA3"/>
                             <constraint firstAttribute="bottom" secondItem="son-6w-dAb" secondAttribute="bottom" id="7G0-bh-2rx"/>
-                            <constraint firstAttribute="bottom" secondItem="BpI-OG-CDf" secondAttribute="bottom" constant="10" id="Bfs-zf-HFJ"/>
+                            <constraint firstAttribute="bottom" secondItem="BpI-OG-CDf" secondAttribute="bottom" constant="5" id="AJd-Ju-qrS"/>
+                            <constraint firstAttribute="trailing" secondItem="BpI-OG-CDf" secondAttribute="trailing" constant="5" id="BO3-VK-pJk"/>
+                            <constraint firstAttribute="trailing" secondItem="Cg3-s5-LKJ" secondAttribute="trailing" constant="10" id="LC6-32-sON"/>
                             <constraint firstItem="son-6w-dAb" firstAttribute="top" secondItem="44n-7T-Mma" secondAttribute="top" id="RMb-Kc-a7Z"/>
                             <constraint firstItem="son-6w-dAb" firstAttribute="leading" secondItem="44n-7T-Mma" secondAttribute="leading" id="b5w-7m-MjK"/>
                             <constraint firstAttribute="trailing" secondItem="son-6w-dAb" secondAttribute="trailing" id="d4O-qy-ViB"/>
-                            <constraint firstAttribute="trailing" secondItem="BpI-OG-CDf" secondAttribute="trailing" constant="10" id="zlH-lQ-o9l"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -145,6 +154,7 @@
     </objects>
     <resources>
         <image name="GDPicker.bundle/done.png" width="16" height="16"/>
+        <image name="GDPicker.bundle/icloud.png" width="16" height="16"/>
         <image name="GDPicker.bundle/livemark.png" width="16" height="16"/>
     </resources>
 </document>

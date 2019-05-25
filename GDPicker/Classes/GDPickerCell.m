@@ -73,6 +73,7 @@
 
 - (void)initCloudView {
     
+    self.icloudTip.hidden = YES;
     //判断是否在iCloud中
     __weak typeof(self) weakSelf = self;
     
@@ -86,7 +87,7 @@
                 BOOL isInLocalAblum = imageData ? YES : NO;
                 weakSelf.icloudView.hidden = isInLocalAblum;
                 if (!imageData && weakSelf.asset.gd_onLoading) {
-                    weakSelf.icloudTip.text = @"下载中...";
+                    weakSelf.icloudTip.hidden = NO;
                 }
             });
         }];
@@ -101,7 +102,7 @@
                 weakSelf.icloudView.hidden = isInLocalAblum;
                 
                 if (!asset && weakSelf.asset.gd_onLoading) {
-                    weakSelf.icloudTip.text = @"下载中...";
+                    weakSelf.icloudTip.hidden = NO;
                 }
             });
         }];
@@ -118,7 +119,7 @@
                     weakSelf.icloudView.hidden = isInLocalAblum;
                     
                     if (!livePhoto && weakSelf.asset.gd_onLoading) {
-                        weakSelf.icloudTip.text = @"下载中...";
+                        weakSelf.icloudTip.hidden = NO;
                     }
                 });
             }];
@@ -145,7 +146,7 @@
         option.synchronous = NO;
         option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+                weakSelf.icloudTip.hidden = NO;
             });
         };
         
@@ -164,7 +165,7 @@
         option.networkAccessAllowed = YES;
         option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
             dispatch_async(dispatch_get_main_queue(), ^{
-                weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+                weakSelf.icloudTip.hidden = NO;
             });
         };
         
@@ -184,7 +185,7 @@
             option.deliveryMode = PHImageRequestOptionsDeliveryModeHighQualityFormat;
             option.progressHandler = ^(double progress, NSError * _Nullable error, BOOL * _Nonnull stop, NSDictionary * _Nullable info) {
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    weakSelf.icloudTip.text = [NSString stringWithFormat:@"下载中:%d", (int)progress*100];
+                    weakSelf.icloudTip.hidden = NO;
                 });
             };
             
